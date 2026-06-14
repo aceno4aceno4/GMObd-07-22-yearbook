@@ -993,5 +993,10 @@ fetch(SHEET_URL)
     });
 
 window.addEventListener("resize", () => {
-    adjustPreviewLines();
+    if (viewMode === "read") {
+        currentPage = 1;
+        renderCards();
+    } else {
+        adjustPreviewLines();
+    }
 });
