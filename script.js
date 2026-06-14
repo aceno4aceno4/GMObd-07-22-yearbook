@@ -472,7 +472,11 @@ function countryStampMarkup(person) {
     `;
 }
     
-const itemsPerPage = 3;
+function getItemsPerPage() {
+    if (window.innerWidth <= 768) return 1;
+    if (window.innerWidth <= 1024) return 2;
+    return 3;
+}
 let currentPage = 1;
 let viewMode = "read";
 
@@ -619,6 +623,8 @@ if (viewMode === "wishwall") {
 document.body.classList.remove("gallery-mode");
 document.body.classList.remove("wishwall-mode");
 
+const itemsPerPage = getItemsPerPage();
+
 const start = (currentPage - 1) * itemsPerPage;
 const end = start + itemsPerPage;
 
@@ -677,6 +683,7 @@ function renderPagination() {
     const left = document.getElementById("pagination-left");
     const right = document.getElementById("pagination-right");
 
+    const itemsPerPage = getItemsPerPage();
     const totalPages = Math.ceil(people.length / itemsPerPage);
 
     left.innerHTML = "";
