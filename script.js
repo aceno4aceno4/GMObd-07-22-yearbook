@@ -477,9 +477,9 @@ function getItemsPerPage() {
         ? window.visualViewport.width
         : window.innerWidth;
 
-    if (width <= 700) return 1;
-    if (width <= 900) return 2;
-    return 3;
+    const safeCardWidth = 430;
+
+    return Math.max(1, Math.floor(width / safeCardWidth));
 }
 let currentPage = 1;
 let viewMode = "read";
