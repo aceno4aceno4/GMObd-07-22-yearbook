@@ -1002,7 +1002,6 @@ window.addEventListener("resize", () => {
     const newItemsPerPage = getItemsPerPage();
 
     if (viewMode === "read" && newItemsPerPage !== lastItemsPerPage) {
-        currentPage = 1;
         lastItemsPerPage = newItemsPerPage;
         renderCards();
         return;
