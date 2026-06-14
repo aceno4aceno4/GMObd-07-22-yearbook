@@ -1398,12 +1398,12 @@ opacity: 0.7;
         display: block !important;
     }
 
-    .detail-title h2 {
-    font-size: clamp(28px, 9vw, 38px) !important;
+   .detail-title h2 {
+    font-size: clamp(24px, 8vw, 36px) !important;
     line-height: 1.12 !important;
     max-width: 100% !important;
     overflow-wrap: anywhere !important;
-    word-break: normal !important;
+    word-break: break-word !important;
     text-align: center !important;
 }
     .detail-country {
