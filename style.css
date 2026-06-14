@@ -1351,3 +1351,20 @@ opacity: 0.7;
 .country-icon--spain {
     opacity: 0.7;
 }
+@media (min-width: 600px) and (max-width: 1100px) {
+    .flag,
+    .card-flag,
+    .person-flag,
+    .country-flag {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 50 !important;
+    }
+
+    .person-card,
+    .card,
+    .postcard {
+        overflow: visible !important;
+    }
+}
