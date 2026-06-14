@@ -996,11 +996,17 @@ fetch(SHEET_URL)
         console.error(error);
     });
 
+let lastItemsPerPage = getItemsPerPage();
+
 window.addEventListener("resize", () => {
-    if (viewMode === "read") {
+    const newItemsPerPage = getItemsPerPage();
+
+    if (viewMode === "read" && newItemsPerPage !== lastItemsPerPage) {
         currentPage = 1;
+        lastItemsPerPage = newItemsPerPage;
         renderCards();
-    } else {
-        adjustPreviewLines();
+        return;
     }
+
+    adjustPreviewLines();
 });
