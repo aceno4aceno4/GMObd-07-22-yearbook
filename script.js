@@ -473,8 +473,12 @@ function countryStampMarkup(person) {
 }
     
 function getItemsPerPage() {
-    if (window.innerWidth <= 768) return 1;
-    if (window.innerWidth <= 1024) return 2;
+    const width = window.visualViewport
+        ? window.visualViewport.width
+        : window.innerWidth;
+
+    if (width <= 700) return 1;
+    if (width <= 900) return 2;
     return 3;
 }
 let currentPage = 1;
