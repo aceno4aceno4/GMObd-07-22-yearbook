@@ -1431,3 +1431,8 @@ opacity: 0.7;
     background: var(--paper-card);
     padding-top: 4px;
 }
+@media (max-width: 700px), (orientation: portrait) {
+    .country-icon {
+        display: none !important;
+    }
+}
