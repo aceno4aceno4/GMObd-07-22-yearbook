@@ -1436,3 +1436,9 @@ opacity: 0.7;
     height: 360px !important;
     width: 82% !important;
 }
+.rudn-photos-section {
+    position: relative;
+    z-index: 3;
+    background: var(--paper-card);
+    padding-top: 4px;
+}

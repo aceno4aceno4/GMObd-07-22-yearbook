@@ -813,13 +813,13 @@ function showDetail(index) {
 
         </section>
 
-        <section class="detail-section">
+        <section class="detail-section rudn-photos-section">
 
-            <h3>RUDN Photos</h3>
+    <h3>RUDN Photos</h3>
 
-            ${galleryHtml}
+    ${galleryHtml}
 
-        </section>
+</section>
 
         ${
     countryIcons[person.country]
