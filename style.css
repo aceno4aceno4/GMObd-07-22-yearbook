@@ -1434,16 +1434,11 @@ opacity: 0.7;
     }
 }
 .title-row {
-    position: relative;
-
     display: flex;
     justify-content: center;
-    align-items: center;
-
-    gap: 0.35em;
-
     width: 100%;
 }
+
 .site-header h1 {
     margin: 0;
     font-family: "Playfair Display", serif;
@@ -1455,66 +1450,50 @@ opacity: 0.7;
     text-align: center;
 }
 
-.site-header h1 span {
+.title-first,
+.title-second {
+    position: relative;
     display: inline;
 }
 
 .grad-cap {
     position: absolute;
-    width: 0.52em;
-    left: calc(50% - 4.2em);
-    top: -0.25em;
+    width: 0.5em;
+    left: -0.28em;
+    top: -0.16em;
     transform: rotate(-10deg);
     pointer-events: none;
-    z-index: 3;
 }
 
-.rudn-stamp {
-    width: 1em;
-    height: 1em;
-    font-size: clamp(34px, 6vw, 58px);
-    flex-shrink: 0;
-}
-
-.rudn-stamp img {
-    width: 100%;
+.rudn-logo-inline {
+    width: 0.95em;
     height: auto;
-    display: block;
+    display: inline-block;
+    vertical-align: -0.08em;
+    margin-left: 0.25em;
     opacity: 0.72;
 }
 
 @media (max-width: 600px) {
-    .title-row {
-        flex-direction: row;
-        flex-wrap: wrap;
-
-        justify-content: center;
-        align-items: center;
-
-        gap: 0.25em;
-    }
     .site-header h1 {
-        font-size: clamp(36px, 10vw, 46px);
+        font-size: clamp(38px, 11vw, 46px);
+        line-height: 1.08;
     }
 
-    .site-header h1 span {
+    .title-first,
+    .title-second {
         display: block;
     }
 
     .grad-cap {
-        width: 0.42em;
-        left: calc(50% - 3.6em);
-        top: -0.2em;
+        width: 0.46em;
+        left: -0.22em;
+        top: -0.14em;
     }
-    .rudn-stamp {
-        font-size: clamp(36px, 10vw, 46px);
-        width: 1.25em;
-        height: 1.25em;
-    }
-}
-@media (max-width: 600px) {
-    .title-first,
-    .title-second {
+
+    .rudn-logo-inline {
         display: block;
+        margin: 0.18em auto 0;
+        width: 0.9em;
     }
 }
