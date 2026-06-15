@@ -1415,3 +1415,35 @@ opacity: 0.7;
         flex-wrap: wrap !important;
     }
 }
+@media (max-width: 600px) {
+    .country-watermark {
+        max-width: 95% !important;
+        max-height: 42% !important;
+        opacity: 0.08 !important;
+        right: 50% !important;
+        left: auto !important;
+        transform: translateX(50%) !important;
+        top: auto !important;
+        bottom: 220px !important;
+        object-fit: contain !important;
+        pointer-events: none !important;
+        z-index: 0 !important;
+    }
+
+    .detail-section,
+    .detail-header,
+    .detail-title,
+    .detail-country {
+        position: relative !important;
+        z-index: 2 !important;
+    }
+
+    .country-icon {
+        max-width: 130px !important;
+        max-height: 170px !important;
+        right: 24px !important;
+        bottom: 38px !important;
+        opacity: 0.95 !important;
+        z-index: 1 !important;
+    }
+}
