@@ -1,1497 +1,741 @@
-/* ============================================================
-   GMObd-07-22 Yearbook
-   Phong cách: hiện đại pha vintage — "airmail / postcard"
-   Một lớp, nhiều quốc gia, một kết nối.
-   ============================================================ */
+/* ============================================================GMObd-07-22 YearbookPhong cách: hiện đại pha vintage — "airmail / postcard"Một lớp, nhiều quốc gia, một kết nối.============================================================ */
 
-:root {
-    --paper: #f7f1e3;          /* nền giấy kraft sáng */
-    --paper-card: #fffdf7;     /* mặt thiệp */
-    --ink: #2a2620;            /* mực nâu đậm */
-    --ink-soft: #6b6357;       /* mực nhạt */
-    --teal: #1f5f6e;           /* xanh cổ điển (điểm nhấn chính) */
-    --teal-deep: #16454f;
-    --rust: #b8543a;           /* đỏ gạch / tem thư (accent) */
-    --gold: #c9a14a;           /* vàng đồng (accent phụ) */
-    --line: #e4d9c2;           /* viền giấy */
-    --radius: 16px;
-    --shadow-soft: 0 10px 30px rgba(42, 38, 32, 0.12);
-    --shadow-lift: 0 18px 44px rgba(42, 38, 32, 0.2);
+ {--paper: #f7f1e3;          /* nền giấy kraft sáng /--paper-card: #fffdf7;     / mặt thiệp /--ink: #2a2620;            / mực nâu đậm /--ink-soft: #6b6357;       / mực nhạt /--teal: #1f5f6e;           / xanh cổ điển (điểm nhấn chính) /--teal-deep: #16454f;--rust: #b8543a;           / đỏ gạch / tem thư (accent) /--gold: #c9a14a;           / vàng đồng (accent phụ) /--line: #e4d9c2;           / viền giấy */--radius: 16px;--shadow-soft: 0 10px 30px rgba(42, 38, 32, 0.12);--shadow-lift: 0 18px 44px rgba(42, 38, 32, 0.2);}
+
+{box-sizing: border-box;}
+
+body {margin: 0;font-family: "Be Vietnam Pro", sans-serif;color: var(--ink);background-color: var(--paper);/* Vân giấy vintage nhẹ */background-image:radial-gradient(circle at 20% 20%, rgba(201, 161, 74, 0.08) 0, transparent 40%),radial-gradient(circle at 80% 0%, rgba(31, 95, 110, 0.07) 0, transparent 45%),radial-gradient(circle at 50% 100%, rgba(184, 84, 58, 0.06) 0, transparent 50%);min-height: 100vh;position: relative;overflow-x: hidden;}
+
+/* Lớp nền "đường bay" kiểu bản đồ thế giới */.world-bg {position: fixed;inset: 0;z-index: 0;pointer-events: none;opacity: 0.12;
+
+background-image: url("world-map.png");
+background-repeat: no-repeat;
+background-position: center center;
+background-size: cover;
+
 }
 
-* {
-    box-sizing: border-box;
-}
+/* ---------------- Header ---------------- */.site-header {text-align: center;padding: 56px 16px 28px;}
 
-body {
-    margin: 0;
-    font-family: "Be Vietnam Pro", sans-serif;
-    color: var(--ink);
-    background-color: var(--paper);
-    /* Vân giấy vintage nhẹ */
-    background-image:
-        radial-gradient(circle at 20% 20%, rgba(201, 161, 74, 0.08) 0, transparent 40%),
-        radial-gradient(circle at 80% 0%, rgba(31, 95, 110, 0.07) 0, transparent 45%),
-        radial-gradient(circle at 50% 100%, rgba(184, 84, 58, 0.06) 0, transparent 50%);
-    min-height: 100vh;
-    position: relative;
-    overflow-x: hidden;
-}
+.header-eyebrow {display: inline-block;font-size: 13px;letter-spacing: 0.28em;text-transform: uppercase;color: var(--rust);font-weight: 600;padding: 6px 16px;border: 1px dashed var(--rust);border-radius: 999px;margin-bottom: 14px;}
 
-/* Lớp nền "đường bay" kiểu bản đồ thế giới */
-.world-bg {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0.12;
+.site-header h1 {margin: 0;font-family: "Playfair Display", serif;font-size: clamp(34px, 6vw, 58px);font-weight: 700;letter-spacing: -0.01em;color: var(--teal-deep);text-wrap: balance;}
 
-    background-image: url("world-map.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-}
+.site-header p {margin: 12px auto 0;max-width: 540px;font-size: 17px;line-height: 1.6;color: var(--ink-soft);text-wrap: pretty;}
 
-/* ---------------- Header ---------------- */
-.site-header {
-    text-align: center;
-    padding: 56px 16px 28px;
-}
+main {width: min(1500px, 94%);margin: 0 auto 40px;}
 
-.header-eyebrow {
-    display: inline-block;
-    font-size: 13px;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--rust);
-    font-weight: 600;
-    padding: 6px 16px;
-    border: 1px dashed var(--rust);
-    border-radius: 999px;
-    margin-bottom: 14px;
-}
+.loading-text {text-align: center;color: var(--ink-soft);font-size: 17px;grid-column: 1 / -1;}
 
-.site-header h1 {
-    margin: 0;
-    font-family: "Playfair Display", serif;
-    font-size: clamp(34px, 6vw, 58px);
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    color: var(--teal-deep);
-    line-height: 1.05;
-    text-align: center;
-}
-.site-header p {
-    margin: 12px auto 0;
-    max-width: 540px;
-    font-size: 17px;
-    line-height: 1.6;
-    color: var(--ink-soft);
-    text-wrap: pretty;
-}
+/* ---------------- Lưới thẻ ---------------- */.cards-container {display: grid;grid-template-columns: repeat(auto-fit, minmax(280px, 300px));justify-content: center;gap: 34px;padding-top: 10px;}
 
-main {
-    width: min(1500px, 94%);
-    margin: 0 auto 40px;
-}
+/* ---------------- Thẻ lưu bút (bưu thiếp) ---------------- */.card {background: var(--paper-card);border-radius: var(--radius);padding: 22px 20px 24px;border: 1px solid var(--line);box-shadow: var(--shadow-soft);position: relative;overflow: visible;width: 100%;max-width: 300px;
 
-.loading-text {
-    text-align: center;
-    color: var(--ink-soft);
-    font-size: 17px;
-    grid-column: 1 / -1;
-}
+height: clamp(560px, calc(100vh - 130px), 660px);
+min-height: 0;
 
-/* ---------------- Lưới thẻ ---------------- */
-.cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 300px));
-    justify-content: center;
-    gap: 34px;
-    padding-top: 10px;
-}
+display: flex;
+flex-direction: column;
+align-items: center;
 
-/* ---------------- Thẻ lưu bút (bưu thiếp) ---------------- */
-.card {
-    background: var(--paper-card);
-    border-radius: var(--radius);
-    padding: 22px 20px 24px;
-    border: 1px solid var(--line);
-    box-shadow: var(--shadow-soft);
-    position: relative;
- overflow: visible;
-    width: 100%;
-    max-width: 300px;
+}/* Viền răng cưa kiểu tem thư quanh thẻ */.card::before {content: "";position: absolute;inset: 8px;border-radius: calc(var(--radius) - 6px);border: 1.5px dashed var(--line);pointer-events: none;}
 
-    height: clamp(560px, calc(100vh - 130px), 660px);
-    min-height: 0;
+.card {transform: translateY(-6px) rotate(-0.5deg);box-shadow: var(--shadow-lift);}
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-/* Viền răng cưa kiểu tem thư quanh thẻ */
-.card::before {
-    content: "";
-    position: absolute;
-    inset: 8px;
-    border-radius: calc(var(--radius) - 6px);
-    border: 1.5px dashed var(--line);
-    pointer-events: none;
-}
+/* Con tem góc phải trên */.postage-stamp {position: absolute;top: 14px;right: 14px;width: 52px;height: 60px;background:repeating-linear-gradient(0deg, transparent 0 5px, rgba(255,255,255,0.6) 5px 6px),var(--rust);border: 2px solid var(--paper-card);box-shadow: 0 0 0 1.5px var(--rust);display: grid;place-items: center;transform: rotate(4deg);z-index: 3;}
 
-.card:hover {
-    transform: translateY(-6px) rotate(-0.5deg);
-    box-shadow: var(--shadow-lift);
-}
+.postage-stamp__inner {font-family: "Playfair Display", serif;font-size: 11px;font-weight: 700;letter-spacing: 0.08em;color: var(--paper-card);border: 1px solid rgba(255, 255, 255, 0.7);padding: 3px 5px;border-radius: 3px;}
 
-/* Con tem góc phải trên */
-.postage-stamp {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    width: 52px;
-    height: 60px;
-    background:
-        repeating-linear-gradient(0deg, transparent 0 5px, rgba(255,255,255,0.6) 5px 6px),
-        var(--rust);
-    border: 2px solid var(--paper-card);
-    box-shadow: 0 0 0 1.5px var(--rust);
-    display: grid;
-    place-items: center;
-    transform: rotate(4deg);
-    z-index: 3;
-}
+/* Quốc kỳ góc trái trên /.flag {position: absolute;top: 18px;left: 14px;width: 96px;height: auto;border-radius: 7px;box-shadow: 0 5px 14px rgba(0, 0, 0, 0.24);z-index: 6;transform: rotate(-15deg);}/ Khung ảnh đại diện kiểu polaroid */.avatar-frame {margin-top: 34px;padding: 10px 10px 14px;background: #fff;border-radius: 8px;box-shadow: 0 6px 16px rgba(42, 38, 32, 0.16);transform: rotate(-1.2deg);border: 1px solid var(--line);}
 
-.postage-stamp__inner {
-    font-family: "Playfair Display", serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: var(--paper-card);
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    padding: 3px 5px;
-    border-radius: 3px;
-}
+.avatar {display: block;width: 160px;height: 190px;object-fit: cover;border-radius: 4px;background: #eef3f1;}
 
-/* Quốc kỳ góc trái trên */
-.flag {
-    position: absolute;
-    top: 18px;
-    left: 14px;
-    width: 96px;
-    height: auto;
-    border-radius: 7px;
-    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.24);
-    z-index: 6;
-    transform: rotate(-15deg);
-}
-/* Khung ảnh đại diện kiểu polaroid */
-.avatar-frame {
-    margin-top: 34px;
-    padding: 10px 10px 14px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 6px 16px rgba(42, 38, 32, 0.16);
-    transform: rotate(-1.2deg);
-    border: 1px solid var(--line);
-}
+.card h2 {margin: 18px 0 12px;font-family: "Playfair Display", serif;font-size: 24px;font-weight: 700;text-align: center;color: var(--teal-deep);text-wrap: balance;}
 
-.avatar {
-    display: block;
-    width: 160px;
-    height: 190px;
-    object-fit: cover;
-    border-radius: 4px;
-    background: #eef3f1;
+.card-country {margin: 0 0 8px;font-size: 14px;color: var(--ink-soft);display: flex;align-items: center;gap: 6px;}
+
+.detail-country {margin: 22px auto 12px;font-size: 16px;color: var(--ink-soft);
+
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 12px;
+
+}.pin-dot {width: 8px;height: 8px;border-radius: 50%;background: var(--rust);box-shadow: 0 0 0 3px rgba(184, 84, 58, 0.18);flex-shrink: 0;}
+
+.short-message {font-family: "Be Vietnam Pro", sans-serif;font-size: clamp(18px, 2.2vh, 22px);line-height: 1.4;color: var(--rust);margin: 0 0 10px;text-align: center;text-wrap: pretty;
+
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+overflow: hidden;
+
+}.preview {font-size: 15px;line-height: 1.45;color: var(--ink-soft);
+
+display: -webkit-box;
+-webkit-box-orient: vertical;
+overflow: hidden;
+
+text-align: center;
+margin: 8px 0 14px;
+
+}@media (max-height: 760px) {.preview {-webkit-line-clamp: 2;}
+
+.short-message {
+    font-size: 19px;
 }
 
 .card h2 {
-    margin: 18px 0 12px;
-    font-family: "Playfair Display", serif;
-    font-size: 24px;
-    font-weight: 700;
-    text-align: center;
-    color: var(--teal-deep);
-    text-wrap: balance;
+    font-size: 22px;
 }
 
-.card-country {
-    margin: 0 0 8px;
-    font-size: 14px;
-    color: var(--ink-soft);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
+}/* ---------------- Nút ---------------- */.more-button {margin-top: auto;align-self: center;white-space: nowrap;}.more-button,#back-button {border: none;background: var(--teal);color: #fff;padding: 11px 20px;border-radius: 999px;cursor: pointer;font-family: "Be Vietnam Pro", sans-serif;font-size: 15px;font-weight: 600;letter-spacing: 0.01em;transition: background 0.2s ease, transform 0.2s ease;}
 
-.detail-country {
-    margin: 22px auto 12px;
-    font-size: 16px;
-    color: var(--ink-soft);
+.more-button {background: var(--teal-deep);transform: none;}
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-}
-.pin-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--rust);
-    box-shadow: 0 0 0 3px rgba(184, 84, 58, 0.18);
-    flex-shrink: 0;
-}
+#back-button {background: var(--teal);color: #fff;transform: translateY(-2px);}
 
-.short-message {
-    font-family: "Be Vietnam Pro", sans-serif;
-    font-size: clamp(18px, 2.2vh, 22px);
-    line-height: 1.4;
-    color: var(--rust);
-    margin: 0 0 10px;
-    text-align: center;
-    text-wrap: pretty;
+.hidden {display: none;}
 
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-.preview {
-    font-size: 15px;
-    line-height: 1.45;
-    color: var(--ink-soft);
+#back-button {margin-bottom: 24px;background: transparent;color: var(--teal-deep);border: 1.5px solid var(--teal);}
 
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+#back-button {background: var(--teal);color: #fff;}
 
-    text-align: center;
-    margin: 8px 0 14px;
-}
-@media (max-height: 760px) {
-    .preview {
-        -webkit-line-clamp: 2;
-    }
+/* ---------------- Trang chi tiết (lá thư mở) ---------------- */.detail-card {background: var(--paper-card);border-radius: 20px;padding: 32px 30px;border: 1px solid var(--line);box-shadow: var(--shadow-lift);position: relative;overflow: hidden;max-width: 860px;margin: 0 auto;}
 
-    .short-message {
-        font-size: 19px;
-    }
+/* Sọc viền airmail đỏ-xanh quanh mép thư */.detail-card::before {content: "";position: absolute;inset: 0;pointer-events: none;border: 10px solid transparent;border-image: repeating-linear-gradient(45deg,var(--rust) 0 12px,var(--paper-card) 12px 24px,var(--teal) 24px 36px,var(--paper-card) 36px 48px) 10;opacity: 0.65;}
 
-    .card h2 {
-        font-size: 22px;
-    }
-   }
-/* ---------------- Nút ---------------- */
-.more-button {
-    margin-top: auto;
-    align-self: center;
-    white-space: nowrap;
-}
-.more-button,
-#back-button {
-    border: none;
-    background: var(--teal);
-    color: #fff;
-    padding: 11px 20px;
-    border-radius: 999px;
-    cursor: pointer;
-    font-family: "Be Vietnam Pro", sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    transition: background 0.2s ease, transform 0.2s ease;
-}
+.postage-stamp--detail {top: 24px;right: 26px;width: 64px;height: 74px;}
 
-.more-button:hover {
-    background: var(--teal-deep);
-    transform: none;
-}
+.postage-stamp--detail .postage-stamp__inner {font-size: 13px;}
 
-#back-button:hover {
-    background: var(--teal);
-    color: #fff;
-    transform: translateY(-2px);
-}
+/* Dấu bưu điện tròn */.postmark {position: absolute;top: 20px;right: 36px;
 
-.hidden {
-    display: none;
-}
+width: 92px;
+height: 92px;
 
-#back-button {
-    margin-bottom: 24px;
-    background: transparent;
-    color: var(--teal-deep);
-    border: 1.5px solid var(--teal);
-}
+border: 2px solid rgba(184, 84, 58, 0.65);
+border-radius: 50%;
 
-#back-button:hover {
-    background: var(--teal);
-    color: #fff;
-}
+color: rgba(184, 84, 58, 0.75);
 
-/* ---------------- Trang chi tiết (lá thư mở) ---------------- */
-.detail-card {
-    background: var(--paper-card);
-    border-radius: 20px;
-    padding: 32px 30px;
-    border: 1px solid var(--line);
-    box-shadow: var(--shadow-lift);
-    position: relative;
-    overflow: hidden;
-    max-width: 860px;
-    margin: 0 auto;
-}
+font-family: "Playfair Display", serif;
 
-/* Sọc viền airmail đỏ-xanh quanh mép thư */
-.detail-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    border: 10px solid transparent;
-    border-image: repeating-linear-gradient(
-        45deg,
-        var(--rust) 0 12px,
-        var(--paper-card) 12px 24px,
-        var(--teal) 24px 36px,
-        var(--paper-card) 36px 48px
-    ) 10;
-    opacity: 0.65;
-}
+font-weight: 700;
+font-size: 13px;
+line-height: 1.25;
 
-.postage-stamp--detail {
-    top: 24px;
-    right: 26px;
-    width: 64px;
-    height: 74px;
-}
+text-align: center;
 
-.postage-stamp--detail .postage-stamp__inner {
-    font-size: 13px;
-}
+display: grid;
+place-items: center;
 
-/* Dấu bưu điện tròn */
-.postmark {
-    position: absolute;
-    top: 20px;
-    right: 36px;
+padding: 6px;transform: rotate(-12deg);
 
-    width: 92px;
-    height: 92px;
-
-    border: 2px solid rgba(184, 84, 58, 0.65);
-    border-radius: 50%;
-
-    color: rgba(184, 84, 58, 0.75);
-
-    font-family: "Playfair Display", serif;
-
-    font-weight: 700;
-    font-size: 13px;
-    line-height: 1.25;
-
-    text-align: center;
-
-    display: grid;
-    place-items: center;
-padding: 6px;
-    transform: rotate(-12deg);
-
-    opacity: 0.72;
-
-    z-index: 0;
-}
-
-.postmark::before {
-    content: "";
-
-    position: absolute;
-    inset: 4.5px;
-
-    border: 2px solid rgba(184, 84, 58, 0.7);
-    border-radius: 50%;
-}
-.detail-header {
-    display: flex;
-    gap: 26px;
-    align-items: center;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 1;
-}
-
-.detail-avatar-frame {
-    width: 340px;
-    height: 340px;
-    padding: 12px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(42, 38, 32, 0.18);
-    transform: rotate(-1.5deg);
-    border: 1px solid var(--line);
-    flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.detail-avatar {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-    border-radius: 4px;
-}
-.detail-title {
-    flex: 1;
-    min-height: 340px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    position: relative;
-    z-index: 2;
-    overflow: hidden;
-}
-.detail-title h2 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(28px, 4vw, 38px);
-    margin: 0 auto 12px;
-    color: var(--teal-deep);
-
-    text-align: center;
-    line-height: 1.15;
-    max-width: 460px;
-
-    text-wrap: balance;
-    overflow-wrap: break-word;
-
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-
-    overflow: hidden;
-}
-.detail-flag {
-    width: 85px;
-    height: auto;
-    vertical-align: middle;
-    border-radius: 6px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-    transform: rotate(0deg);
-}
-
-.detail-flag--emoji {
-    font-size: 34px;
-    box-shadow: none;
-}
-
-.detail-section {
-    margin-top: 28px;
-    position: relative;
-    z-index: 1;
-}
-
-.detail-section h3 {
-    margin: 0 0 10px;
-    font-family: "Playfair Display", serif;
-    font-size: 20px;
-    color: var(--rust);
-    display: inline-block;
-    border-bottom: 2px solid var(--gold);
-    padding-bottom: 4px;
-}
-
-.detail-section p {
-    line-height: 1.7;
-    color: var(--ink);
-    margin: 8px 0;
-}
-
-.detail-quote {
-    font-family: "Be Vietnam Pro", sans-serif;
-    font-style: italic;
-    font-size: 26px !important;
-    color: var(--rust) !important;
-    line-height: 1.4 !important;
-
-    text-align: center;
-    max-width: 760px;
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-.empty-note {
-    color: var(--ink-soft);
-    font-style: italic;
-}
-
-/* ---------------- Thư viện ảnh ---------------- */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 220px));
-    gap: 16px;
-    margin-top: 6px;
-    justify-content: start;
-}
-.gallery img {
-    width: 220px;
-    max-width: 100%;
-    height: 160px;    object-fit: cover;
-    border-radius: 8px;
-    border: 4px solid #fff;
-    box-shadow: var(--shadow-soft);
-    transition: transform 0.25s ease;
-}
-
-.gallery img:hover {
-    transform: scale(1.03) rotate(0.5deg);
-}
-
-/* ---------------- Footer ---------------- */
-.site-footer {
-    text-align: center;
-    padding: 24px 16px 48px;
-    color: var(--ink-soft);
-    font-size: 14px;
-}
-
-/* ---------------- Responsive ---------------- */
-@media (max-width: 768px) {
-    .cards-container {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 280px));
-        gap: 26px;
-    }
-
-    .avatar {
-        width: 160px;
-        height: 200px;
-    }
-
-    .detail-card {
-        padding: 26px 18px;
-    }
-
-    .postmark {
-        display: none;
-    }
-
-    .detail-avatar {
-        width: 200px;
-    }
-}
-.rudn-stamp {
-    width: clamp(34px, 6vw, 58px);
-    height: clamp(34px, 6vw, 58px);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    flex-shrink: 0;
-}
-.rudn-stamp img {
-    width: 100%;
-    height: auto;
-
-    object-fit: contain;
-
-    display: block;
 opacity: 0.72;
-}
-.image-lightbox {
-    position: fixed;
-    inset: 0;
-    background: rgba(42, 38, 32, 0.78);
-    z-index: 9999;
 
+z-index: 0;
+
+}
+
+.postmark::before {content: "";
+
+position: absolute;
+inset: 4.5px;
+
+border: 2px solid rgba(184, 84, 58, 0.7);
+border-radius: 50%;
+
+}.detail-header {display: flex;gap: 26px;align-items: center;flex-wrap: wrap;position: relative;z-index: 1;}
+
+.detail-avatar-frame {width: 340px;height: 340px;padding: 12px;background: #fff;border-radius: 8px;box-shadow: 0 8px 20px rgba(42, 38, 32, 0.18);transform: rotate(-1.5deg);border: 1px solid var(--line);flex-shrink: 0;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+}.detail-avatar {display: block;width: 100%;height: 100%;object-fit: cover;object-position: center center;border-radius: 4px;}.detail-title {flex: 1;min-height: 340px;
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+position: relative;
+z-index: 2;
+overflow: hidden;
+
+}.detail-title h2 {font-family: "Playfair Display", serif;font-size: clamp(28px, 4vw, 38px);margin: 0 auto 12px;color: var(--teal-deep);
+
+text-align: center;
+line-height: 1.15;
+max-width: 460px;
+
+text-wrap: balance;
+overflow-wrap: break-word;
+
+display: -webkit-box;
+-webkit-line-clamp: 3;
+-webkit-box-orient: vertical;
+
+overflow: hidden;
+
+}.detail-flag {width: 85px;height: auto;vertical-align: middle;border-radius: 6px;box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);transform: rotate(0deg);}
+
+.detail-flag--emoji {font-size: 34px;box-shadow: none;}
+
+.detail-section {margin-top: 28px;position: relative;z-index: 1;}
+
+.detail-section h3 {margin: 0 0 10px;font-family: "Playfair Display", serif;font-size: 20px;color: var(--rust);display: inline-block;border-bottom: 2px solid var(--gold);padding-bottom: 4px;}
+
+.detail-section p {line-height: 1.7;color: var(--ink);margin: 8px 0;}
+
+.detail-quote {font-family: "Be Vietnam Pro", sans-serif;font-style: italic;font-size: 26px !important;color: var(--rust) !important;line-height: 1.4 !important;
+
+text-align: center;
+max-width: 760px;
+margin-left: auto !important;
+margin-right: auto !important;
+
+}.empty-note {color: var(--ink-soft);font-style: italic;}
+
+/* ---------------- Thư viện ảnh ---------------- */.gallery {display: grid;grid-template-columns: repeat(auto-fit, minmax(160px, 220px));gap: 16px;margin-top: 6px;justify-content: start;}.gallery img {width: 220px;max-width: 100%;height: 160px;    object-fit: cover;border-radius: 8px;border: 4px solid #fff;box-shadow: var(--shadow-soft);transition: transform 0.25s ease;}
+
+.gallery img {transform: scale(1.03) rotate(0.5deg);}
+
+/* ---------------- Footer ---------------- */.site-footer {text-align: center;padding: 24px 16px 48px;color: var(--ink-soft);font-size: 14px;}
+
+/* ---------------- Responsive ---------------- */@media (max-width: 768px) {.cards-container {grid-template-columns: repeat(auto-fit, minmax(240px, 280px));gap: 26px;}
+
+.avatar {
+    width: 160px;
+    height: 200px;
+}
+
+.detail-card {
+    padding: 26px 18px;
+}
+
+.postmark {
     display: none;
-    justify-content: center;
-    align-items: center;
-
-    padding: 28px;
 }
 
-.image-lightbox.is-open {
-    display: flex;
+.detail-avatar {
+    width: 200px;
 }
 
-.image-lightbox img {
-    max-width: 92vw;
-    max-height: 88vh;
-    object-fit: contain;
+}.title-row {display: flex;justify-content: center;align-items: center;gap: 18px;flex-wrap: wrap;}
 
-    border-radius: 10px;
-    background: #fff;
-    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+.rudn-stamp {width: 80px;height: 80px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+flex-shrink: 0;
+
+}.rudn-stamp img {width: 100%;height: auto;
+
+object-fit: contain;
+
+display: block;
+
+opacity: 0.72;}.image-lightbox {position: fixed;inset: 0;background: rgba(42, 38, 32, 0.78);z-index: 9999;
+
+display: none;
+justify-content: center;
+align-items: center;
+
+padding: 28px;
+
 }
 
-.lightbox-close {
-    position: fixed;
-    top: 20px;
-    right: 26px;
+.image-lightbox.is-open {display: flex;}
 
-    border: none;
-    background: rgba(255, 253, 247, 0.92);
-    color: var(--teal-deep);
+.image-lightbox img {max-width: 92vw;max-height: 88vh;object-fit: contain;
 
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
+border-radius: 10px;
+background: #fff;
+box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
 
-    font-size: 28px;
-    line-height: 1;
-    cursor: pointer;
-
-    box-shadow: var(--shadow-soft);
-}
-.pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    margin: 32px 0 24px;
 }
 
-.pagination button {
-    border: none;
-    padding: 10px 20px;
-    border-radius: 999px;
-    background: #0f6b7a;
-    color: white;
-    font-weight: 700;
-    cursor: pointer;
+.lightbox-close {position: fixed;top: 20px;right: 26px;
+
+border: none;
+background: rgba(255, 253, 247, 0.92);
+color: var(--teal-deep);
+
+width: 42px;
+height: 42px;
+border-radius: 50%;
+
+font-size: 28px;
+line-height: 1;
+cursor: pointer;
+
+box-shadow: var(--shadow-soft);
+
+}.pagination {display: flex;justify-content: center;align-items: center;gap: 16px;margin: 32px 0 24px;}
+
+.pagination button {border: none;padding: 10px 20px;border-radius: 999px;background: #0f6b7a;color: white;font-weight: 700;cursor: pointer;}
+
+.pagination button {opacity: 0.4;cursor: not-allowed;}
+
+.pagination span {color: #174d57;font-weight: 700;}.country-watermark {position: absolute;
+
+left: 50%;
+
+width: 82%;
+height: 400px;
+
+transform: translateX(-50%);
+
+object-fit: contain;
+object-position: center center;
+
+opacity: 0.08;
+z-index: 0;
+pointer-events: none;
+
+}/* ---------------- View controls ---------------- */.view-controls {display: flex;justify-content: center;gap: 12px;margin: 0 auto 28px;flex-wrap: wrap;}
+
+.view-button {border: 1.5px solid var(--teal);background: transparent;color: var(--teal-deep);padding: 10px 18px;border-radius: 999px;cursor: pointer;font-family: "Be Vietnam Pro", sans-serif;font-size: 14px;font-weight: 700;transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;}
+
+.view-button,.view-button.active {background: var(--teal);color: #fff;transform: translateY(-1px);}
+
+/* ---------------- Class Overview ---------------- */body.overview-mode main {width: min(1500px, 96%);}
+
+body.overview-mode .cards-container {min-height: calc(100vh - 300px);
+
+display: flex;
+flex-wrap: wrap;
+
+justify-content: center;
+align-content: flex-start;
+align-items: flex-start;
+
+gap: clamp(18px, 2vw, 34px);
+padding: 10px 0 28px;
+
+width: 100%;
+max-width: none;
+
+overflow: visible;
+
+}body.overview-mode .overview-card {width: clamp(145px, 11vw, 190px);flex: 0 0 clamp(145px, 11vw, 190px);min-height: 0;height: auto;
+
+aspect-ratio: 1 / 1.45;
+
+padding: 12px;
+padding-top: 32px;
+
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+
+cursor: pointer;
+position: relative;
+
 }
 
-.pagination button:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
+body.overview-mode .overview-card::before {inset: 6px;}
+
+body.overview-mode .overview-card {transform: translateY(-4px);}
+
+.overview-avatar-frame {width: 100%;aspect-ratio: 1 / 1.05;
+
+padding: 6px;
+background: #fff;
+border-radius: 8px;
+box-shadow: 0 5px 14px rgba(42, 38, 32, 0.15);
+border: 1px solid var(--line);
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+overflow: hidden;
+
 }
 
-.pagination span {
-    color: #174d57;
-    font-weight: 700;
-}
-.country-watermark {
-    position: absolute;
+.overview-avatar {width: 100%;height: 100%;
 
-    left: 50%;
+display: block;
+object-fit: cover;
+object-position: center center;
 
-    width: 82%;
-    height: 400px;
+border-radius: 5px;
 
-    transform: translateX(-50%);
-
-    object-fit: contain;
-    object-position: center center;
-
-    opacity: 0.08;
-    z-index: 0;
-    pointer-events: none;
-}
-/* ---------------- View controls ---------------- */
-.view-controls {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin: 0 auto 28px;
-    flex-wrap: wrap;
 }
 
-.view-button {
-    border: 1.5px solid var(--teal);
-    background: transparent;
-    color: var(--teal-deep);
-    padding: 10px 18px;
-    border-radius: 999px;
-    cursor: pointer;
-    font-family: "Be Vietnam Pro", sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+.overview-flag {position: absolute;top: 8px;left: 8px;
+
+width: clamp(48px, 4vw, 72px);
+height: auto;
+
+border-radius: 6px;
+box-shadow: 0 5px 14px rgba(0, 0, 0, 0.24);
+
+z-index: 6;
+transform: rotate(-15deg);
+
 }
 
-.view-button:hover,
-.view-button.active {
-    background: var(--teal);
-    color: #fff;
-    transform: translateY(-1px);
+.overview-name {margin: 10px 0 0;width: 100%;
+
+font-family: "Cormorant Garamond", serif;
+font-size: clamp(15px, 1.15vw, 20px);
+font-weight: 700;
+line-height: 1.05;
+
+color: var(--teal-deep);
+text-align: center;
+
+overflow: visible;
+overflow-wrap: anywhere;
+word-break: normal;
+
 }
 
-/* ---------------- Class Overview ---------------- */
-body.overview-mode main {
-    width: min(1500px, 96%);
+/* Quốc tịch dạng chữ nhỏ ở dưới tên */.overview-country {margin-top: 4px;
+
+font-size: clamp(9px, 0.75vw, 12px);
+font-weight: 600;
+line-height: 1.15;
+
+color: var(--ink-soft);
+text-align: center;
+
+max-width: 100%;
+overflow-wrap: anywhere;
+
 }
 
-body.overview-mode .cards-container {
-    min-height: calc(100vh - 300px);
+@media (max-width: 768px) {body.overview-mode .cards-container {min-height: auto;grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));gap: 16px;}
 
-    display: flex;
-    flex-wrap: wrap;
-
-    justify-content: center;
-    align-content: flex-start;
-    align-items: flex-start;
-
-    gap: clamp(18px, 2vw, 34px);
-    padding: 10px 0 28px;
-
-    width: 100%;
-    max-width: none;
-
-    overflow: visible;
-}
 body.overview-mode .overview-card {
-   width: clamp(145px, 11vw, 190px);
-    flex: 0 0 clamp(145px, 11vw, 190px);
-    min-height: 0;
-    height: auto;
-
-    aspect-ratio: 1 / 1.45;
-
-    padding: 12px;
-    padding-top: 32px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-
-    cursor: pointer;
-    position: relative;
-}
-
-body.overview-mode .overview-card::before {
-    inset: 6px;
-}
-
-body.overview-mode .overview-card:hover {
-    transform: translateY(-4px);
-}
-
-.overview-avatar-frame {
-    width: 100%;
-    aspect-ratio: 1 / 1.05;
-
-    padding: 6px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 5px 14px rgba(42, 38, 32, 0.15);
-    border: 1px solid var(--line);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-}
-
-.overview-avatar {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-    object-fit: cover;
-    object-position: center center;
-
-    border-radius: 5px;
+    width: min(135px, 100%);
+    aspect-ratio: 1 / 1.5;
+    padding: 10px;
+    padding-top: 30px;
 }
 
 .overview-flag {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-
-    width: clamp(48px, 4vw, 72px);
-    height: auto;
-
-    border-radius: 6px;
-    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.24);
-
-    z-index: 6;
-    transform: rotate(-15deg);
+    width: 48px;
 }
 
 .overview-name {
-    margin: 10px 0 0;
-    width: 100%;
-
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(15px, 1.15vw, 20px);
-    font-weight: 700;
-    line-height: 1.05;
-
-    color: var(--teal-deep);
-    text-align: center;
-
-    overflow: visible;
-    overflow-wrap: anywhere;
-    word-break: normal;
+    font-size: 15px;
 }
 
-/* Quốc tịch dạng chữ nhỏ ở dưới tên */
 .overview-country {
-    margin-top: 4px;
-
-    font-size: clamp(9px, 0.75vw, 12px);
-    font-weight: 600;
-    line-height: 1.15;
-
-    color: var(--ink-soft);
-    text-align: center;
-
-    max-width: 100%;
-    overflow-wrap: anywhere;
+    font-size: 10px;
 }
 
-@media (max-width: 768px) {
-    body.overview-mode .cards-container {
-        min-height: auto;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 16px;
-    }
+}.cards-wrapper {display: grid;grid-template-columns: 72px minmax(0, 1fr) 72px;align-items: center;gap: 18px;width: 100%;}#pagination-left,#pagination-right {display: flex;justify-content: center;align-items: center;}
 
-    body.overview-mode .overview-card {
-        width: min(135px, 100%);
-        aspect-ratio: 1 / 1.5;
-        padding: 10px;
-        padding-top: 30px;
-    }
+.side-pagination {position: absolute;top: 50%;transform: translateY(-50%);
 
-    .overview-flag {
-        width: 48px;
-    }
+width: 52px;
+height: 52px;
 
-    .overview-name {
-        font-size: 15px;
-    }
+border: none;
+border-radius: 50%;
 
-    .overview-country {
-        font-size: 10px;
-    }
-}
-.cards-wrapper {
-    display: grid;
-    grid-template-columns: 72px minmax(0, 1fr) 72px;
-    align-items: center;
-    gap: 18px;
-    width: 100%;
-}
-#pagination-left,
-#pagination-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+background: rgba(31, 95, 110, 0.9);
+color: white;
+
+font-size: 26px;
+cursor: pointer;
+
+box-shadow: var(--shadow-soft);
+
+z-index: 10;
+
 }
 
-.side-pagination {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+.side-pagination {background: var(--teal-deep);}
 
-    width: 52px;
-    height: 52px;
+.side-pagination.left {left: -26px;}
 
-    border: none;
-    border-radius: 50%;
+.side-pagination.right {right: -26px;}
 
-    background: rgba(31, 95, 110, 0.9);
-    color: white;
+.side-pagination {opacity: 0.35;cursor: not-allowed;}body(.overview-mode) .cards-container {width: 100%;grid-template-columns: repeat(auto-fit, minmax(280px, 300px));justify-content: center;}.view-sidebar {position: fixed;top: 120px;left: 18px;z-index: 50;
 
-    font-size: 26px;
-    cursor: pointer;
+display: flex;
+align-items: flex-start;
+gap: 10px;
 
-    box-shadow: var(--shadow-soft);
-
-    z-index: 10;
 }
 
-.side-pagination:hover {
-    background: var(--teal-deep);
+.view-sidebar-toggle {width: 46px;height: 46px;
+
+border: none;
+border-radius: 50%;
+
+background: var(--teal);
+color: #fff;
+
+font-size: 22px;
+cursor: pointer;
+
+box-shadow: var(--shadow-soft);
+
 }
 
-.side-pagination.left {
-    left: -26px;
+.view-sidebar-panel {display: none;
+
+background: rgba(255, 253, 247, 0.94);
+border: 1px solid var(--line);
+border-radius: 16px;
+
+padding: 12px;
+
+box-shadow: var(--shadow-soft);
+
 }
 
-.side-pagination.right {
-    right: -26px;
+.view-sidebar.is-open .view-sidebar-panel {display: flex;flex-direction: column;gap: 10px;}
+
+.view-sidebar .view-button {min-width: 150px;text-align: left;}.country-stamp {position: absolute;top: 40px;right: 48px;
+
+width: 130px;
+height: 130px;
+
+z-index: 8;
+opacity: 0.78;
+transform: rotate(9deg) translate(50%, -50%);
+
+filter: blur(0.15px);filter: contrast(0.96);pointer-events: none;overflow: visible;}.country-stamp-outer,.country-stamp-inner {fill: none;stroke: rgba(176, 92, 76, 0.58);}
+
+.country-stamp-outer {stroke-width: 3;}
+
+.country-stamp-inner {stroke-width: 2;}
+
+.country-stamp-ring,.country-stamp-center,.country-stamp-year {fill: rgba(176, 92, 76, 0.58);}.country-stamp-center {font-family: "Playfair Display", serif;font-weight: 700;letter-spacing: 0.04em;}body.gallery-mode .cards-container {display: block;max-width: 1100px;margin: 0 auto;}
+
+.all-gallery {column-count: 4;column-gap: 18px;}
+
+.all-gallery-item {break-inside: avoid;margin-bottom: 18px;
+
+background: var(--paper-card);
+border: 1px solid var(--line);
+border-radius: 14px;
+padding: 10px;
+
+box-shadow: var(--shadow-soft);
+
 }
 
-.side-pagination:disabled {
-    opacity: 0.35;
-    cursor: not-allowed;
-}
-body:not(.overview-mode) .cards-container {
-    width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 300px));
-    justify-content: center;
-}
-.view-sidebar {
-    position: fixed;
-    top: 120px;
-    left: 18px;
-    z-index: 50;
+.all-gallery-item img {width: 100%;display: block;border-radius: 10px;cursor: pointer;}
 
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-}
+.all-gallery-item p {margin: 8px 0 2px;
 
-.view-sidebar-toggle {
-    width: 46px;
-    height: 46px;
+font-weight: 700;
+color: var(--teal-deep);
+font-size: 14px;
 
-    border: none;
-    border-radius: 50%;
+text-align: center;line-height: 1.3;overflow-wrap: anywhere;}
 
-    background: var(--teal);
-    color: #fff;
+.all-gallery-item span {display: block;
 
-    font-size: 22px;
-    cursor: pointer;
+color: var(--ink-soft);
+font-size: 12px;
 
-    box-shadow: var(--shadow-soft);
-}
+text-align: center;
 
-.view-sidebar-panel {
-    display: none;
+}@media (max-width: 900px) {.all-gallery {column-count: 3;}}
 
-    background: rgba(255, 253, 247, 0.94);
-    border: 1px solid var(--line);
-    border-radius: 16px;
+@media (max-width: 650px) {.all-gallery {column-count: 2;}}
 
-    padding: 12px;
+@media (max-width: 420px) {.all-gallery {column-count: 1;}}.site-header h1 {position: relative;display: inline-block;}
 
-    box-shadow: var(--shadow-soft);
-}
+.grad-cap {position: absolute;
 
-.view-sidebar.is-open .view-sidebar-panel {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+width: 70px;
 
-.view-sidebar .view-button {
-    min-width: 150px;
-    text-align: left;
-}
-.country-stamp {
-    position: absolute;
-    top: 40px;
-    right: 48px;
+left: -28px;
+top: -18px;
 
-    width: 130px;
-    height: 130px;
+transform: rotate(-10deg);
 
-    z-index: 8;
-    opacity: 0.78;
-    transform: rotate(9deg) translate(50%, -50%);
-filter: blur(0.15px);
-filter: contrast(0.96);
-    pointer-events: none;
-    overflow: visible;
-}
-.country-stamp-outer,
-.country-stamp-inner {
-    fill: none;
-   stroke: rgba(176, 92, 76, 0.58);
-}
+pointer-events: none;
+z-index: 3;
 
-.country-stamp-outer {
-    stroke-width: 3;
-}
+}/* ---------------- Wish Wall ---------------- */body.wishwall-mode main {width: min(1250px, 96%);}
 
-.country-stamp-inner {
-    stroke-width: 2;
-}
+body.wishwall-mode .cards-wrapper {display: block;}
 
-.country-stamp-ring,
-.country-stamp-center,
-.country-stamp-year {
-    fill: rgba(176, 92, 76, 0.58);
-}
-.country-stamp-center {
-    font-family: "Playfair Display", serif;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-}
-body.gallery-mode .cards-container {
-    display: block;
-    max-width: 1100px;
-    margin: 0 auto;
-}
+body.wishwall-mode .cards-container {display: block;max-width: 1120px;margin: 0 auto;}
 
-.all-gallery {
-    column-count: 4;
-    column-gap: 18px;
-}
+.wish-wall {column-count: 2;column-gap: 34px;}
 
-.all-gallery-item {
-    break-inside: avoid;
-    margin-bottom: 18px;
+.wish-wall-item {break-inside: avoid;display: flex;align-items: flex-end;gap: 14px;margin-bottom: 26px;}
 
-    background: var(--paper-card);
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 10px;
+.wish-wall-item.from-right {flex-direction: row-reverse;}.wish-wall-item.from-left .wish-bubble,.wish-wall-item.from-left .wish-meta,.wish-wall-item.from-left .wish-bubble p {text-align: left;}
 
-    box-shadow: var(--shadow-soft);
-}
+.wish-wall-item.from-right .wish-bubble,.wish-wall-item.from-right .wish-meta,.wish-wall-item.from-right .wish-bubble p {text-align: right;}.wish-avatar-wrap {width: 76px;height: 76px;flex-shrink: 0;padding: 5px;background: #fff;border-radius: 50%;border: 1px solid var(--line);box-shadow: var(--shadow-soft);}
 
-.all-gallery-item img {
-    width: 100%;
-    display: block;
-    border-radius: 10px;
-    cursor: pointer;
-}
+.wish-avatar {width: 100%;height: 100%;display: block;object-fit: cover;border-radius: 50%;}
 
-.all-gallery-item p {
-    margin: 8px 0 2px;
+.wish-bubble {position: relative;overflow: visible;max-width: 430px;min-height: 120px;padding: 20px 22px;border-radius: 24px;background: var(--wish-color);border: 1px solid var(--line);box-shadow: var(--shadow-soft);}
 
-    font-weight: 700;
-    color: var(--teal-deep);
-    font-size: 14px;
+.wish-bubble::after {content: "";position: absolute;bottom: 18px;left: -12px;width: 24px;height: 24px;background: var(--paper-card);border-left: 1px solid var(--line);border-bottom: 1px solid var(--line);transform: rotate(45deg);}
 
-   text-align: center;
-    line-height: 1.3;
-    overflow-wrap: anywhere;
-}
+.wish-wall-item.from-right .wish-bubble::after {left: auto;right: -12px;border-left: none;border-bottom: 1px solid var(--line);border-right: 1px solid var(--line);}
 
-.all-gallery-item span {
-    display: block;
+.wish-meta {display: block;margin-bottom: 12px;font-size: 13px;}.wish-meta strong {color: var(--ink-soft);font-family: "Be Vietnam Pro", sans-serif;font-size: 13px;font-weight: 700;line-height: 1.35;}
 
-    color: var(--ink-soft);
-    font-size: 12px;
+.wish-meta span {color: var(--ink-soft);font-size: 13px;font-weight: 600;}
 
-    text-align: center;
-}
-@media (max-width: 900px) {
-    .all-gallery {
-        column-count: 3;
-    }
-}
+.wish-bubble p {margin: 0;color: var(--ink);font-size: 16px;line-height: 1.65;overflow-wrap: anywhere;}
 
-@media (max-width: 650px) {
-    .all-gallery {
-        column-count: 2;
-    }
-}
+@media (max-width: 760px) {.wish-wall {column-count: 1;}
 
-@media (max-width: 420px) {
-    .all-gallery {
-        column-count: 1;
-    }
-}
-.site-header h1 {
-    margin: 0;
-    font-family: "Playfair Display", serif;
-    font-size: clamp(34px, 6vw, 58px);
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    color: var(--teal-deep);
-    line-height: 1.05;
-    text-align: center;
-}
-
-
-.rudn-stamp {
-    width: 1em;
-    height: 1em;
-    font-size: clamp(34px, 6vw, 58px);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    flex-shrink: 0;
-}
-/* ---------------- Wish Wall ---------------- */
-body.wishwall-mode main {
-    width: min(1250px, 96%);
-}
-
-body.wishwall-mode .cards-wrapper {
-    display: block;
-}
-
-body.wishwall-mode .cards-container {
-    display: block;
-    max-width: 1120px;
-    margin: 0 auto;
-}
-
-.wish-wall {
-    column-count: 2;
-    column-gap: 34px;
-}
-
-.wish-wall-item {
-    break-inside: avoid;
-    display: flex;
-    align-items: flex-end;
-    gap: 14px;
-    margin-bottom: 26px;
-}
-
-.wish-wall-item.from-right {
+.wish-wall-item:nth-child(even) {
     flex-direction: row-reverse;
 }
-.wish-wall-item.from-left .wish-bubble,
-.wish-wall-item.from-left .wish-meta,
-.wish-wall-item.from-left .wish-bubble p {
-    text-align: left;
-}
 
-.wish-wall-item.from-right .wish-bubble,
-.wish-wall-item.from-right .wish-meta,
-.wish-wall-item.from-right .wish-bubble p {
-    text-align: right;
-}
 .wish-avatar-wrap {
-    width: 76px;
-    height: 76px;
-    flex-shrink: 0;
-    padding: 5px;
-    background: #fff;
-    border-radius: 50%;
-    border: 1px solid var(--line);
-    box-shadow: var(--shadow-soft);
-}
-
-.wish-avatar {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    border-radius: 50%;
+    width: 62px;
+    height: 62px;
 }
 
 .wish-bubble {
-    position: relative;
-overflow: visible;
-    max-width: 430px;
-    min-height: 120px;
-    padding: 20px 22px;
-    border-radius: 24px;
-    background: var(--wish-color);
-    border: 1px solid var(--line);
-    box-shadow: var(--shadow-soft);
+    max-width: calc(100vw - 120px);
+    padding: 16px 18px;
+    border-radius: 20px;
 }
 
-.wish-bubble::after {
-    content: "";
-    position: absolute;
-    bottom: 18px;
-    left: -12px;
-    width: 24px;
-    height: 24px;
-    background: var(--paper-card);
-    border-left: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    transform: rotate(45deg);
-}
-
-.wish-wall-item.from-right .wish-bubble::after {
-    left: auto;
-    right: -12px;
-    border-left: none;
-    border-bottom: 1px solid var(--line);
-    border-right: 1px solid var(--line);
-}
-
-.wish-meta {
-    display: block;
-    margin-bottom: 12px;
-    font-size: 13px;
-}
 .wish-meta strong {
-    color: var(--ink-soft);
-    font-family: "Be Vietnam Pro", sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    line-height: 1.35;
-}
-
-.wish-meta span {
-    color: var(--ink-soft);
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 18px;
 }
 
 .wish-bubble p {
-    margin: 0;
-    color: var(--ink);
-    font-size: 16px;
-    line-height: 1.65;
-    overflow-wrap: anywhere;
+    font-size: 15px;
 }
 
-@media (max-width: 760px) {
-    .wish-wall {
-        column-count: 1;
-    }
-
-    .wish-wall-item:nth-child(even) {
-        flex-direction: row-reverse;
-    }
-
-    .wish-avatar-wrap {
-        width: 62px;
-        height: 62px;
-    }
-
-    .wish-bubble {
-        max-width: calc(100vw - 120px);
-        padding: 16px 18px;
-        border-radius: 20px;
-    }
-
-    .wish-meta strong {
-        font-size: 18px;
-    }
-
-    .wish-bubble p {
-        font-size: 15px;
-    }
 }
 
-.wish-flag {
-    position: absolute;
+.wish-flag {position: absolute;
 
-    top: 14px;
-    right: 14px;
+top: 14px;
+right: 14px;
 
-    width: 46px;
-    height: auto;
-    object-fit: contain;
+width: 46px;
+height: auto;
+object-fit: contain;
 
-    border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+border-radius: 5px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 
-    transform: rotate(8deg);
+transform: rotate(8deg);
 
-    background: white;
-    padding: 2px;
+background: white;
+padding: 2px;
+
 }
 
-.wish-wall-item.from-right .wish-flag {
-    right: auto;
-    left: 14px;
+.wish-wall-item.from-right .wish-flag {right: auto;left: 14px;
 
-    transform: rotate(-8deg);
+transform: rotate(-8deg);
+
 }
 
-.wish-wall-item.from-left .wish-meta {
-    padding-right: 70px;
+.wish-wall-item.from-left .wish-meta {padding-right: 70px;}
+
+.wish-wall-item.from-right .wish-meta {padding-left: 70px;}
+
+.wish-meta strong {display: block;
+
+overflow-wrap: anywhere;
+line-height: 1.35;
+
 }
 
-.wish-wall-item.from-right .wish-meta {
-    padding-left: 70px;
+.country-icon {position: absolute;
+
+right: 28px;
+bottom: 24px;
+
+width: 180px;
+height: 180px;
+
+opacity: 0.85;object-fit: contain;object-position: bottom right;
+
+pointer-events: none;
+z-index: 5;
+
+}.country-icon--turkey {width: 130px;height: 130px;right: 40px;bottom: 34px;opacity: 0.8;}
+
+.country-icon--uzbekistan {width: 130px;height: 130px;right: 40px;bottom: 34px;opacity: 0.8;}
+
+.country-icon--mongolia {width: 180px;height: 250px;right: 28px;bottom: 18px;opacity: 0.7;
+
 }
 
-.wish-meta strong {
-    display: block;
+.country-icon--vietnam {width: 225px;height: 225px;right: 20px;bottom: 18px;}
 
-    overflow-wrap: anywhere;
-    line-height: 1.35;
+.country-icon--spain {opacity: 0.7;}@media (min-width: 600px) and (max-width: 1100px) {.flag,.card-flag,.person-flag,.country-flag {display: block !important;visibility: visible !important;opacity: 1 !important;z-index: 50 !important;}
+
+.person-card,
+.card,
+.postcard {
+    overflow: visible !important;
+}
+
+}
+
+@media (max-width: 600px) {.detail-header {display: block !important;text-align: center !important;}
+
+.detail-avatar-frame {
+    width: 100% !important;
+    max-width: 320px !important;
+    height: 360px !important;
+    margin: 0 auto 28px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+.detail-avatar {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+.detail-title h2 {
+    font-size: clamp(24px, 8vw, 36px) !important;
+    line-height: 1.12 !important;
+    max-width: 100% !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+    text-align: center !important;
+}
+
+.detail-country {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+}
+
+  .detail-section,
+.detail-header,
+.detail-title,
+.detail-country {
+    position: relative !important;
+    z-index: 2 !important;
 }
 
 .country-icon {
-    position: absolute;
-
-    right: 28px;
-    bottom: 24px;
-
-    width: 180px;
-    height: 180px;
-opacity: 0.85;
-    object-fit: contain;
-    object-position: bottom right;
-
-    pointer-events: none;
-    z-index: 5;
+    max-width: 130px !important;
+    max-height: 170px !important;
+    right: 24px !important;
+    bottom: 38px !important;
+    opacity: 0.95 !important;
+    z-index: 1 !important;
 }
-.country-icon--turkey {
-    width: 130px;
-    height: 130px;
-    right: 40px;
-    bottom: 34px;
-opacity: 0.8;
-}
-
-.country-icon--uzbekistan {
-    width: 130px;
-    height: 130px;
-    right: 40px;
-    bottom: 34px;
-opacity: 0.8;
-}
-
-.country-icon--mongolia {
-    width: 180px;
-    height: 250px;
-    right: 28px;
-    bottom: 18px;
-opacity: 0.7;
 
 }
 
-.country-icon--vietnam {
-    width: 225px;
-    height: 225px;
-    right: 20px;
-    bottom: 18px;
-}
-
-.country-icon--spain {
-    opacity: 0.7;
-}
-@media (min-width: 600px) and (max-width: 1100px) {
-    .flag,
-    .card-flag,
-    .person-flag,
-    .country-flag {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        z-index: 50 !important;
-    }
-
-    .person-card,
-    .card,
-    .postcard {
-        overflow: visible !important;
-    }
-}
-
-@media (max-width: 600px) {
-    .detail-header {
-        display: block !important;
-        text-align: center !important;
-    }
-
-    .detail-avatar-frame {
-        width: 100% !important;
-        max-width: 320px !important;
-        height: 360px !important;
-        margin: 0 auto 28px !important;
-        box-sizing: border-box !important;
-        overflow: hidden !important;
-    }
-
-    .detail-avatar {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        display: block !important;
-    }
-
-    .detail-title h2 {
-        font-size: clamp(24px, 8vw, 36px) !important;
-        line-height: 1.12 !important;
-        max-width: 100% !important;
-        overflow-wrap: anywhere !important;
-        word-break: break-word !important;
-        text-align: center !important;
-    }
-
-    .detail-country {
-        justify-content: center !important;
-        flex-wrap: wrap !important;
-    }
-
-      .detail-section,
-    .detail-header,
-    .detail-title,
-    .detail-country {
-        position: relative !important;
-        z-index: 2 !important;
-    }
-
-    .country-icon {
-        max-width: 130px !important;
-        max-height: 170px !important;
-        right: 24px !important;
-        bottom: 38px !important;
-        opacity: 0.95 !important;
-        z-index: 1 !important;
-    }
-}    
-
-.rudn-photos-section {
-    position: relative;
-    z-index: 3;
-    background: var(--paper-card);
-    padding-top: 4px;
-}
-@media (max-width: 700px), (orientation: portrait) {
-    .country-icon {
-        display: none !important;
-    }
-}
-.title-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
-    flex-wrap: wrap;
-}
-
-.site-header h1 {
-    position: relative;
-    display: inline-block;
-
-    margin: 0;
-    font-family: "Playfair Display", serif;
-    font-size: clamp(34px, 6vw, 58px);
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    color: var(--teal-deep);
-    line-height: 1.05;
-    text-align: center;
-}
-
-.grad-cap {
-    position: absolute;
-    width: clamp(32px, 4vw, 70px);
-    left: -28px;
-    top: -18px;
-    transform: rotate(-10deg);
-    pointer-events: none;
-    z-index: 3;
-}
-
-.rudn-stamp {
-    width: clamp(42px, 5vw, 80px);
-    height: clamp(42px, 5vw, 80px);
-    flex-shrink: 0;
-}
-
-.rudn-stamp img {
-    width: 100%;
-    height: auto;
-    display: block;
-    opacity: 0.72;
-}
-
-@media (max-width: 600px) {
-    .site-header h1 {
-        font-size: clamp(38px, 11vw, 50px);
-        max-width: 92vw;
-    }
-
-    .grad-cap {
-        width: 34px;
-        left: -12px;
-        top: -10px;
-    }
-
-    .rudn-stamp {
-        width: 56px;
-        height: 56px;
-    }
-}
+.rudn-photos-section {position: relative;z-index: 3;background: var(--paper-card);padding-top: 4px;}@media (max-width: 700px), (orientation: portrait) {.country-icon {display: none !important;}}
