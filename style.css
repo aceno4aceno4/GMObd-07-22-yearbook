@@ -1096,21 +1096,32 @@ body.gallery-mode .cards-container {
 }
 .site-header h1 {
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    column-gap: 0.35em;
+    row-gap: 0.05em;
+}
+
+.title-cap-wrap {
+    position: relative;
     display: inline-block;
 }
 
 .grad-cap {
     position: absolute;
-
-    width: 70px;
-
-    left: -28px;
-    top: -18px;
-
+    width: 0.82em;
+    left: -0.42em;
+    top: -0.22em;
     transform: rotate(-10deg);
-
     pointer-events: none;
     z-index: 3;
+}
+
+.rudn-stamp {
+    width: clamp(52px, 7vw, 80px);
+    height: clamp(52px, 7vw, 80px);
 }
 /* ---------------- Wish Wall ---------------- */
 body.wishwall-mode main {
@@ -1434,5 +1445,27 @@ opacity: 0.7;
 @media (max-width: 700px), (orientation: portrait) {
     .country-icon {
         display: none !important;
+    }
+}
+@media (max-width: 600px) {
+    .title-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .site-header h1 {
+        font-size: clamp(42px, 13vw, 58px);
+        line-height: 1.05;
+    }
+
+    .rudn-stamp {
+        width: 86px;
+        height: 86px;
+    }
+
+    .grad-cap {
+        width: 0.78em;
+        left: -0.38em;
+        top: -0.2em;
     }
 }
