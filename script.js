@@ -264,9 +264,17 @@ return {
 
         country: country,
 mapClass:
-    country === "Россия (Russia)"
+    [
+        "Россия (Russia)",
+        "Мексика (Mexico)",
+        "Монголия (Mongolia)",
+        "Турция (Turkey)",
+        "Казахстан (Kazakhstan)",
+        "Туркменистан (Turkmenistan)",
+        "Узбекистан (Uzbekistan)"
+    ].includes(country)
         ? "country-watermark--wide"
-        : "",
+        : "country-watermark--tall",
         flag: flags[country] || "rudn-logo.png",
 
         map:
