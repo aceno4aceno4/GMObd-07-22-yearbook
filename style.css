@@ -1512,36 +1512,41 @@ opacity: 0.7;
     }
 
     body.overview-mode .cards-container {
-    display: grid !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
 
-    grid-auto-flow: column !important;
+        width: max-content !important;
+        max-width: none !important;
 
-    grid-template-rows: repeat(2, auto) !important;
+        gap: 10px !important;
+        padding: 10px 10px 20px !important;
 
-    grid-auto-columns: 120px !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
 
-    width: max-content !important;
-    max-width: none !important;
+        overflow: visible !important;
+    }
 
-    overflow: visible !important;
+    body.overview-mode .overview-card {
+        width: 120px !important;
+        flex: 0 0 120px !important;
 
-    justify-content: start !important;
-    align-content: start !important;
-    align-items: start !important;
+        aspect-ratio: 1 / 1.5 !important;
 
-    column-gap: 10px !important;
-    row-gap: 14px !important;
+        padding: 10px !important;
+        padding-top: 30px !important;
+    }
 
-    padding: 10px 10px 20px !important;
-}
+    .overview-flag {
+        width: 44px !important;
+    }
 
-body.overview-mode .overview-card {
-    width: 120px !important;
+    .overview-name {
+        font-size: 14px !important;
+    }
 
-    flex: 0 0 120px !important;
-
-    aspect-ratio: 1 / 1.5 !important;
-
-    padding: 10px !important;
-    padding-top: 30px !important;
+    .overview-country {
+        font-size: 9px !important;
+    }
 }
