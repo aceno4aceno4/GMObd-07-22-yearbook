@@ -1496,3 +1496,47 @@ opacity: 0.7;
         bottom: 64px;
     }
 }
+@media (max-width: 768px) {
+    body.overview-mode .cards-wrapper {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        padding-bottom: 16px !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    body.overview-mode #pagination-left,
+    body.overview-mode #pagination-right {
+        display: none !important;
+    }
+
+    body.overview-mode .cards-container {
+        display: grid !important;
+        grid-auto-flow: column !important;
+        grid-template-rows: repeat(2, auto) !important;
+        grid-auto-columns: 128px !important;
+
+        width: max-content !important;
+        max-width: none !important;
+
+        overflow: visible !important;
+
+        justify-content: start !important;
+        align-content: start !important;
+        align-items: start !important;
+
+        gap: 14px !important;
+        padding: 10px 10px 20px !important;
+    }
+
+    body.overview-mode .overview-card {
+        width: 128px !important;
+        flex: 0 0 128px !important;
+
+        aspect-ratio: 1 / 1.5 !important;
+
+        padding: 10px !important;
+        padding-top: 30px !important;
+    }
+}
