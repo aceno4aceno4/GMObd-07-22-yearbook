@@ -383,13 +383,11 @@ function countryStampMarkup(person) {
 }
     
 function getItemsPerPage() {
-    const width = window.visualViewport
-        ? window.visualViewport.width
-        : window.innerWidth;
+    const width = window.innerWidth;
 
-    if (width >= 1700) return 4;
-    if (width >= 1150) return 3;
-    if (width >= 700) return 2;
+    if (width >= 1600) return 4;
+    if (width >= 1200) return 3;
+    if (width >= 850) return 2;
 
     return 1;
 }
