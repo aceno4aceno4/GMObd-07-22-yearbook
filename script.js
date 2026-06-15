@@ -754,7 +754,7 @@ function showDetail(index) {
         <span class="postmark" aria-hidden="true">РУДН<br>ГМОБд<br>07-22</span>
 
  <img
-    class="country-watermark"
+    class="country-watermark country-watermark--${person.country.includes("Russia") || person.country.includes("Россия") ? "wide" : "normal"}"
     src="${person.map.src}"
     alt=""
 >
