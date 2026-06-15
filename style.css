@@ -1434,7 +1434,10 @@ opacity: 0.7;
 @media (max-width: 700px), (orientation: portrait) {
     .country-icon,
     .grad-cap,
-    .rudn-stamp {
+    .rudn-stamp,
+    .rudn-stamp img,
+    .title-row .rudn-stamp,
+    .site-header .grad-cap {
         display: none !important;
     }
 }
