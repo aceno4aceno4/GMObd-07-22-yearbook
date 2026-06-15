@@ -91,7 +91,7 @@ body {
 }
 
 main {
-    width: min(1500px, 94%);
+    width: min(1200px, 94%);
     margin: 0 auto 40px;
 }
 
@@ -1432,7 +1432,9 @@ opacity: 0.7;
     padding-top: 4px;
 }
 @media (max-width: 700px), (orientation: portrait) {
-    .country-icon {
+    .country-icon,
+    .grad-cap,
+    .rudn-stamp {
         display: none !important;
     }
 }
