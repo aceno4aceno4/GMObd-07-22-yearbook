@@ -765,7 +765,7 @@ function showDetail(index) {
         <span class="postmark" aria-hidden="true">РУДН<br>ГМОБд<br>07-22</span>
 
 <img
-    class="country-watermark ${person.mapClass || ""}"
+    class="country-watermark"
     src="${person.map.src}"
     alt=""
 >
@@ -843,9 +843,28 @@ function showDetail(index) {
 
         </article>
     `;
+function positionWatermark() {
+    const card = document.querySelector(".detail-card");
+    const watermark = document.querySelector(".country-watermark");
+    const country = document.querySelector(".detail-country");
+    const photos = document.querySelector(".detail-section:last-of-type");
 
+    if (!card || !watermark || !country || !photos) return;
+
+    const cardRect = card.getBoundingClientRect();
+    const countryRect = country.getBoundingClientRect();
+    const photosRect = photos.getBoundingClientRect();
+
+    const start = countryRect.bottom - cardRect.top + 40;
+    const end = photosRect.top - cardRect.top - 20;
+    const availableHeight = Math.max(220, end - start);
+
+    watermark.style.top = `${start}px`;
+    watermark.style.height = `${availableHeight}px`;
+    watermark.style.width = `82%`;
+}
     enableGalleryLightbox();
-
+positionWatermark();
     window.scrollTo(0, 0);
 }
 
