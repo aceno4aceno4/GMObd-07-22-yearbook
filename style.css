@@ -1511,22 +1511,24 @@ opacity: 0.7;
         display: none !important;
     }
 
-    body.overview-mode .cards-container {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
+  body.overview-mode .cards-container {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
 
-        width: max-content !important;
-        max-width: none !important;
+    width: max-content !important;
+    max-width: none !important;
 
-        gap: 10px !important;
-        padding: 10px 10px 20px !important;
+    margin: 0 !important;
 
-        justify-content: flex-start !important;
-        align-items: flex-start !important;
+    gap: 10px !important;
+    padding: 10px 10px 20px !important;
 
-        overflow: visible !important;
-    }
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+
+    overflow: visible !important;
+}
 
     body.overview-mode .overview-card {
         width: 120px !important;
