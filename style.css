@@ -1462,8 +1462,8 @@ opacity: 0.7;
 .grad-cap {
     position: absolute;
     width: 0.52em;
-    left: -0.35em;
-    top: -0.18em;
+    left: calc(50% - 4.2em);
+    top: -0.25em;
     transform: rotate(-10deg);
     pointer-events: none;
     z-index: 3;
@@ -1503,14 +1503,13 @@ opacity: 0.7;
 
     .grad-cap {
         width: 0.42em;
-        left: 0.1em;
-        top: -0.18em;
+        left: calc(50% - 3.6em);
+        top: -0.2em;
     }
-
     .rudn-stamp {
         font-size: clamp(36px, 10vw, 46px);
-        width: 1em;
-        height: 1em;
+        width: 1.25em;
+        height: 1.25em;
     }
 }
 @media (max-width: 600px) {
