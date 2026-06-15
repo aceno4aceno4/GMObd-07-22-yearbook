@@ -1459,26 +1459,27 @@ scroll-snap-type: x mandatory;
     }
 
     body.overview-mode .cards-container {
-        display: grid !important;
-        grid-auto-flow: column !important;
-        grid-template-rows: repeat(2, 180px) !important;
-        grid-auto-columns: 120px !important;
+    display: grid !important;
+    grid-template-columns: none !important;
+    grid-auto-flow: column !important;
+    grid-template-rows: repeat(2, 180px) !important;
+    grid-auto-columns: 120px !important;
 
-        width: max-content !important;
-        max-width: none !important;
+    width: max-content !important;
+    max-width: none !important;
 
-        column-gap: 10px !important;
-        row-gap: 12px !important;
+    column-gap: 10px !important;
+    row-gap: 12px !important;
 
-        padding: 10px !important;
-        margin: 0 !important;
+    padding: 10px !important;
+    margin: 0 !important;
 
-        justify-content: start !important;
-        align-content: start !important;
-        align-items: start !important;
+    justify-content: start !important;
+    align-content: start !important;
+    align-items: start !important;
 
-        overflow: visible !important;
-    }
+    overflow: visible !important;
+}
 
     body.overview-mode .overview-card {
         width: 120px !important;
