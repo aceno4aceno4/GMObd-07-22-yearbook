@@ -74,10 +74,14 @@ body {
 .site-header h1 {
     margin: 0;
     font-family: "Playfair Display", serif;
-   font-size: 1em;
+    font-size: clamp(34px, 6vw, 58px);
     font-weight: 700;
     letter-spacing: -0.01em;
     color: var(--teal-deep);
+
+    position: relative;
+    display: inline-block;
+    line-height: 1.05;
     text-wrap: balance;
 }
 
@@ -592,8 +596,8 @@ padding: 6px;
 }
 
 .rudn-stamp {
-    width: 1em;
-    height: 1em;
+    width: clamp(34px, 6vw, 58px);
+    height: clamp(34px, 6vw, 58px);
 
     display: flex;
     justify-content: center;
@@ -1111,9 +1115,9 @@ body.gallery-mode .cards-container {
 
 .grad-cap {
     position: absolute;
-    width: 0.48em;
-    left: -0.25em;
-    top: -0.18em;
+    width: 0.45em;
+    left: -0.32em;
+    top: -0.12em;
     transform: rotate(-10deg);
     pointer-events: none;
     z-index: 3;
@@ -1450,25 +1454,22 @@ opacity: 0.7;
 @media (max-width: 600px) {
     .title-row {
         flex-direction: column;
-        gap: 12px;
+        gap: 10px;
     }
 
     .site-header h1 {
-        font-size: clamp(42px, 13vw, 58px);
-        line-height: 1.05;
+        font-size: clamp(38px, 11vw, 48px);
+        line-height: 1.08;
     }
 
     .rudn-stamp {
-        width: 1.15em;
-        height: 1.15em;
+        width: clamp(38px, 11vw, 48px);
+        height: clamp(38px, 11vw, 48px);
     }
 
     .grad-cap {
-        width: 0.46em;
-        left: -0.22em;
-        top: -0.16em;
+        width: 0.42em;
+        left: -0.26em;
+        top: -0.1em;
     }
-}
-.title-row {
-    font-size: clamp(34px, 6vw, 58px);
 }
