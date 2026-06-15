@@ -1434,19 +1434,64 @@ opacity: 0.7;
     }
 }
 .title-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.site-header h1 {
     position: relative;
+    display: inline-block;
+
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(34px, 6vw, 58px);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--teal-deep);
+    line-height: 1.05;
+    text-align: center;
 }
 
 .grad-cap {
     position: absolute;
-
-    width: clamp(28px, 4vw, 54px);
-
-    left: 0;
-    top: 0;
-
-    transform: rotate(-12deg);
-
+    width: clamp(32px, 4vw, 70px);
+    left: -28px;
+    top: -18px;
+    transform: rotate(-10deg);
     pointer-events: none;
     z-index: 3;
+}
+
+.rudn-stamp {
+    width: clamp(42px, 5vw, 80px);
+    height: clamp(42px, 5vw, 80px);
+    flex-shrink: 0;
+}
+
+.rudn-stamp img {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0.72;
+}
+
+@media (max-width: 600px) {
+    .site-header h1 {
+        font-size: clamp(38px, 11vw, 50px);
+        max-width: 92vw;
+    }
+
+    .grad-cap {
+        width: 34px;
+        left: -12px;
+        top: -10px;
+    }
+
+    .rudn-stamp {
+        width: 56px;
+        height: 56px;
+    }
 }
