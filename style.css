@@ -78,13 +78,14 @@ body {
     font-weight: 700;
     letter-spacing: -0.01em;
     color: var(--teal-deep);
-
-    position: relative;
-    display: inline-block;
     line-height: 1.05;
-    text-wrap: balance;
+    text-align: center;
 }
 
+.title-line {
+    display: inline-block;
+    position: relative;
+}
 .site-header p {
     margin: 12px auto 0;
     max-width: 540px;
@@ -1116,7 +1117,7 @@ body.gallery-mode .cards-container {
 .grad-cap {
     position: absolute;
     width: 0.45em;
-    left: -0.32em;
+    left: -0.28em;
     top: -0.12em;
     transform: rotate(-10deg);
     pointer-events: none;
@@ -1452,24 +1453,22 @@ opacity: 0.7;
     }
 }
 @media (max-width: 600px) {
-    .title-row {
-        flex-direction: column;
-        gap: 10px;
-    }
-
     .site-header h1 {
-        font-size: clamp(38px, 11vw, 48px);
-        line-height: 1.08;
+        font-size: clamp(36px, 10vw, 46px);
     }
 
-    .rudn-stamp {
-        width: clamp(38px, 11vw, 48px);
-        height: clamp(38px, 11vw, 48px);
+    .title-line {
+        display: block;
     }
 
     .grad-cap {
-        width: 0.42em;
-        left: -0.26em;
+        width: 0.38em;
+        left: -0.2em;
         top: -0.1em;
+    }
+
+    .rudn-stamp {
+        width: 1em;
+        height: 1em;
     }
 }
