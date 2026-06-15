@@ -856,29 +856,57 @@ body.overview-mode .overview-card:hover {
 }
 
 @media (max-width: 768px) {
+
+    body.overview-mode .cards-wrapper {
+        display: block;
+        overflow-x: auto;
+        padding-bottom: 14px;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
     body.overview-mode .cards-container {
         min-height: auto;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 16px;
+
+        display: grid;
+
+        grid-auto-flow: column;
+
+        grid-template-rows: repeat(2, auto);
+
+        grid-auto-columns: 128px;
+
+        width: max-content;
+        max-width: none;
+
+        justify-content: start;
+        align-content: start;
+
+        gap: 14px;
+        padding: 10px 6px 20px;
     }
 
     body.overview-mode .overview-card {
-        width: min(135px, 100%);
+        width: 128px;
+
+        flex: none;
+
         aspect-ratio: 1 / 1.5;
+
         padding: 10px;
         padding-top: 30px;
     }
 
     .overview-flag {
-        width: 48px;
+        width: 46px;
     }
 
     .overview-name {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .overview-country {
-        font-size: 10px;
+        font-size: 9px;
     }
 }
 .cards-wrapper {
