@@ -686,13 +686,15 @@ opacity: 0.72;
 .country-watermark {
     position: absolute;
 
-    width: auto;
+    top: 56%;
+    left: 50%;
+
+    width: min(620px, 78%);
     height: auto;
-    max-width: 78%;
-    max-height: 70%;
+
+    transform: translate(-50%, -50%);
 
     object-fit: contain;
-    object-position: center center;
 
     opacity: 0.08;
     z-index: 0;
@@ -1370,18 +1372,6 @@ opacity: 0.7;
 }
 
 @media (max-width: 600px) {
-    .detail-avatar-frame {
-        width: 100% !important;
-        max-width: 320px !important;
-        height: 360px !important;
-        margin: 0 auto 28px !important;
-        box-sizing: border-box !important;
-        overflow: hidden !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-
     .detail-header {
         display: block !important;
         text-align: center !important;
@@ -1390,44 +1380,37 @@ opacity: 0.7;
     .detail-avatar-frame {
         width: 100% !important;
         max-width: 320px !important;
+        height: 360px !important;
         margin: 0 auto 28px !important;
         box-sizing: border-box !important;
+        overflow: hidden !important;
     }
 
-   .detail-avatar {
+    .detail-avatar {
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
         display: block !important;
     }
-}
 
-   .detail-title h2 {
-    font-size: clamp(24px, 8vw, 36px) !important;
-    line-height: 1.12 !important;
-    max-width: 100% !important;
-    overflow-wrap: anywhere !important;
-    word-break: break-word !important;
-    text-align: center !important;
-}
+    .detail-title h2 {
+        font-size: clamp(24px, 8vw, 36px) !important;
+        line-height: 1.12 !important;
+        max-width: 100% !important;
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+        text-align: center !important;
+    }
+
     .detail-country {
         justify-content: center !important;
         flex-wrap: wrap !important;
     }
-}
-@media (max-width: 600px) {
+
     .country-watermark {
-        max-width: 95% !important;
-        max-height: 42% !important;
-        opacity: 0.08 !important;
-        right: 50% !important;
-        left: auto !important;
-        transform: translateX(50%) !important;
-        top: auto !important;
-        bottom: 220px !important;
-        object-fit: contain !important;
-        pointer-events: none !important;
-        z-index: 0 !important;
+        top: 58%;
+        width: 92%;
+        max-height: 55%;
     }
 
     .detail-section,
@@ -1446,4 +1429,4 @@ opacity: 0.7;
         opacity: 0.95 !important;
         z-index: 1 !important;
     }
-}
+}    

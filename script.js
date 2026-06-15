@@ -146,124 +146,23 @@ const countryStamps = {
 };
 
 const countryMaps = {
-    "Вьетнам (Vietnam)": {
-        src: "map/vietnam.svg",
-        top: "400px",
-        right: "140px",
-        height: "58%"
-    },
-
-    "Россия (Russia)": {
-        src: "map/russia.svg",
-        top: "180px",
-        right: "100px",
-        height: "80%"
-    },
-
-    "Mục khác": {
-        src: "rudn-logo.png",
-        bottom: "65px",
-        right: "60px",
-        height: "45%"
-    },
-
-    "Монголия (Mongolia)": {
-        src: "map/mongolia.svg",
-        bottom: "50px",
-        right: "80px",
-        height: "120%"
-    },
-
-    "Мексика (Mexico)": {
-        src: "map/mexico.svg",
-        bottom: "160px",
-        right: "100px",
-        height: "78%"
-    },
-
-    "Узбекистан (Uzbekistan)": {
-        src: "map/uzbekistan.svg",
-        top: "380px",
-        right: "100px",
-        height: "55%"
-    },
-
-    "Марокко (Morocco)": {
-        src: "map/morocco.svg",
-        top: "345px",
-        right: "100px",
-        height: "60%"
-    },
-
-    "Экваториальная Гвинея (Equatorial Guinea)": {
-        src: "map/guinea.svg",
-        top: "420px",
-        right: "100px",
-        height: "52%"
-    },
-
-    "Конго (Congo)": {
-        src: "map/congo.svg",
-        top: "400px",
-        right: "160px",
-        height: "50%"
-    },
-
-    "Казахстан (Kazakhstan)": {
-        src: "map/kazakhstan.svg",
-        top: "330px",
-        right: "100px",
-        height: "60%"
-    },
-
-    "Босния и Герцеговина (Bosnia and Herzegovina)": {
-        src: "map/bosnia.svg",
-        top: "430px",
-        right: "150px",
-        height: "49%"
-    },
-
-    "Испания (Spain)": {
-        src: "map/spain.svg",
-        top: "420px",
-        right: "90px",
-        height: "50%"
-    },
-
-    "Мадагаскар (Madagascar)": {
-        src: "map/madagascar.svg",
-        top: "390px",
-        right: "270px",
-        height: "50%"
-    },
-
-    "Туркменистан (Turkmenistan)": {
-        src: "map/turkmenistan.svg",
-        top: "365px",
-        right: "80px",
-        height: "60%"
-    },
-
-    "Чад (Chad)": {
-        src: "map/chad.svg",
-        top: "420px",
-        right: "220px",
-        height: "45%"
-    },
-
-    "Турция (Turkey)": {
-        src: "map/turkey.svg",
-        top: "250px",
-        right: "100px",
-        height: "72%"
-    },
-
-    "Республика Конго (Republic of the Congo)": {
-        src: "map/congo.svg",
-        top: "400px",
-        right: "160px",
-        height: "50%"
-    }
+    "Вьетнам (Vietnam)": { src: "map/vietnam.svg" },
+    "Россия (Russia)": { src: "map/russia.svg" },
+    "Mục khác": { src: "rudn-logo.png" },
+    "Монголия (Mongolia)": { src: "map/mongolia.svg" },
+    "Мексика (Mexico)": { src: "map/mexico.svg" },
+    "Узбекистан (Uzbekistan)": { src: "map/uzbekistan.svg" },
+    "Марокко (Morocco)": { src: "map/morocco.svg" },
+    "Экваториальная Гвинея (Equatorial Guinea)": { src: "map/guinea.svg" },
+    "Конго (Congo)": { src: "map/congo.svg" },
+    "Казахстан (Kazakhstan)": { src: "map/kazakhstan.svg" },
+    "Босния и Герцеговина (Bosnia and Herzegovina)": { src: "map/bosnia.svg" },
+    "Испания (Spain)": { src: "map/spain.svg" },
+    "Мадагаскар (Madagascar)": { src: "map/madagascar.svg" },
+    "Туркменистан (Turkmenistan)": { src: "map/turkmenistan.svg" },
+    "Чад (Chad)": { src: "map/chad.svg" },
+    "Турция (Turkey)": { src: "map/turkey.svg" },
+    "Республика Конго (Republic of the Congo)": { src: "map/congo.svg" }
 };
 let people = [];
 
@@ -854,19 +753,11 @@ function showDetail(index) {
 
         <span class="postmark" aria-hidden="true">РУДН<br>ГМОБд<br>07-22</span>
 
-        <img
-            class="country-watermark"
-            src="${person.map.src}"
-            alt=""
-            style="
-                ${person.map.top ? `top:${person.map.top};` : ""}
-                ${person.map.bottom ? `bottom:${person.map.bottom};` : ""}
-                ${person.map.left ? `left:${person.map.left};` : ""}
-                ${person.map.right ? `right:${person.map.right};` : ""}
-                ${person.map.width ? `width:${person.map.width};` : ""}
-                ${person.map.height ? `height:${person.map.height};` : ""}
-            "
-        >
+ <img
+    class="country-watermark"
+    src="${person.map.src}"
+    alt=""
+>
 
         <div class="detail-header">
 
