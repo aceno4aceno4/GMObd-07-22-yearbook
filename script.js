@@ -263,7 +263,10 @@ return {
             "https://placehold.co/600x800/f7f1e3/1f5f6e?text=GMObd-07-22",
 
         country: country,
-
+mapClass:
+    country === "Россия (Russia)"
+        ? "country-watermark--wide"
+        : "",
         flag: flags[country] || "rudn-logo.png",
 
         map:
@@ -753,8 +756,8 @@ function showDetail(index) {
 
         <span class="postmark" aria-hidden="true">РУДН<br>ГМОБд<br>07-22</span>
 
- <img
-    class="country-watermark country-watermark--${person.country.includes("Russia") || person.country.includes("Россия") ? "wide" : "normal"}"
+<img
+    class="country-watermark ${person.mapClass || ""}"
     src="${person.map.src}"
     alt=""
 >
