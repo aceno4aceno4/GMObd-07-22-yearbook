@@ -1,1 +1,164 @@
-<!DOCTYPE html> <html lang="ru"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Выпускной альбом GMObd-07-22</title> <meta name="description" content="Электронный выпускной альбом группы GMObd-07-22 — пожелания и воспоминания со всего мира."> <meta name="theme-color" content="#1f5f6e"> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Caveat:wght@500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet"> <link rel="stylesheet" href="style.css?v=10"> </head> <body> <!-- Lớp nền trang trí: đường nối kiểu bản đồ + chấm điểm đến --> <div class="world-bg" aria-hidden="true"></div> <header class="site-header"> <span class="header-eyebrow"> ✶ From RUDN to the World ✶ </span> <div class="title-row"> <h1> <img class="grad-cap" src="graduation-cap.png" alt=""> Выпускной альбом ГМОБд-07-22 </h1> <div class="rudn-stamp"> <img src="Logo_rudn_znak.png" alt="RUDN"> </div> </div> <p> Выпускной альбом нашей группы — воспоминания, пожелания и маленькие письма со всего мира. </p> </header> <main> <section id="home-page"> <div class="view-sidebar" id="view-sidebar"> <button id="view-sidebar-toggle" class="view-sidebar-toggle"> ☰ </button> <div class="view-sidebar-panel"> <button id="read-view-button" class="view-button active"> Reading Mode </button> <button id="class-view-button" class="view-button"> Class Overview </button> <button id="gallery-view-button" class="view-button"> Gallery </button> <button id="wish-wall-view-button" class="view-button"> Wish Wall </button> </div> </div> <div class="cards-wrapper"> <div id="pagination-left"></div> <div id="cards-container" class="cards-container"> <p class="loading-text"> Загрузка данных... </p> </div> <div id="pagination-right"></div> </div> </section> <section id="detail-page" class="hidden"> <button id="back-button"> ← Back to home </button> <div id="detail-container"></div> </section> </main> <footer class="site-footer"> <p> Made by GMObd-07-22 · Many countries, one journey. </p> </footer> <div id="image-lightbox" class="image-lightbox"> <button id="lightbox-close" class="lightbox-close"> × </button> <img id="lightbox-img" src="" alt="Enlarged photo"> </div> <script src="script.js?v=2"></script> </body> </html>
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Выпускной альбом GMObd-07-22</title>
+
+    <meta name="description"
+          content="Электронный выпускной альбом группы GMObd-07-22 — пожелания и воспоминания со всего мира.">
+
+    <meta name="theme-color"
+          content="#1f5f6e">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Caveat:wght@500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="style.css?v=10">
+</head>
+
+<body>
+
+    <!-- Lớp nền trang trí: đường nối kiểu bản đồ + chấm điểm đến -->
+    <div class="world-bg"
+         aria-hidden="true"></div>
+
+    <header class="site-header">
+
+        <span class="header-eyebrow">
+            ✶ From RUDN to the World ✶
+        </span>
+
+        <div class="title-row">
+
+            <h1>
+                <img class="grad-cap"
+                     src="graduation-cap.png"
+                     alt="">
+
+                Выпускной альбом ГМОБд-07-22
+            </h1>
+
+            <div class="rudn-stamp">
+                <img src="Logo_rudn_znak.png"
+                     alt="RUDN">
+            </div>
+
+        </div>
+
+        <p>
+            Выпускной альбом нашей группы — воспоминания,
+            пожелания и маленькие письма со всего мира.
+        </p>
+
+    </header>
+
+    <main>
+
+        <section id="home-page">
+
+            <div class="view-sidebar"
+                 id="view-sidebar">
+
+                <button id="view-sidebar-toggle"
+                        class="view-sidebar-toggle">
+                    ☰
+                </button>
+
+                <div class="view-sidebar-panel">
+
+                    <button id="read-view-button"
+                            class="view-button active">
+                        Reading Mode
+                    </button>
+
+                    <button id="class-view-button"
+                            class="view-button">
+                        Class Overview
+                    </button>
+
+                    <button id="gallery-view-button"
+                            class="view-button">
+                        Gallery
+                    </button>
+
+                    <button id="wish-wall-view-button"
+                            class="view-button">
+                        Wish Wall
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="cards-wrapper">
+
+                <div id="pagination-left"></div>
+
+                <div id="cards-container"
+                     class="cards-container">
+
+                    <p class="loading-text">
+                        Загрузка данных...
+                    </p>
+
+                </div>
+
+                <div id="pagination-right"></div>
+
+            </div>
+
+        </section>
+
+        <section id="detail-page"
+                 class="hidden">
+
+            <button id="back-button">
+                ← Back to home
+            </button>
+
+            <div id="detail-container"></div>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <p>
+            Made by GMObd-07-22 · Many countries, one journey.
+        </p>
+
+    </footer>
+
+    <div id="image-lightbox"
+         class="image-lightbox">
+
+        <button id="lightbox-close"
+                class="lightbox-close">
+            ×
+        </button>
+
+        <img id="lightbox-img"
+             src=""
+             alt="Enlarged photo">
+
+    </div>
+
+    <script src="script.js?v=2"></script>
+
+</body>
+
+</html>
