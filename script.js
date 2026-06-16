@@ -56,7 +56,7 @@ const countryColors = {
     "Чад (Chad)": "#dfe5f4",
     "Турция (Turkey)": "#f2d8d8",
     "Республика Конго (Republic of the Congo)": "#e7efd9"
-"Ливан (Lebanon)": "#e8f0df",
+"Ливан (Lebanon)": "#e8f0df"
 };
 
 function makeStampRing(countryName) {
@@ -165,7 +165,7 @@ const countryMaps = {
     "Чад (Chad)": { src: "map/chad.svg" },
     "Турция (Turkey)": { src: "map/turkey.svg" },
     "Республика Конго (Republic of the Congo)": { src: "map/congo.svg" }
-"Ливан (Lebanon)": { src: "map/lebanon.svg" },
+"Ливан (Lebanon)": { src: "map/lebanon.svg" }
 };
 let people = [];
 
