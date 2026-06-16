@@ -55,7 +55,7 @@ const countryColors = {
     "Туркменистан (Turkmenistan)": "#e6efe3",
     "Чад (Chad)": "#dfe5f4",
     "Турция (Turkey)": "#f2d8d8",
-    "Республика Конго (Republic of the Congo)": "#e7efd9"
+"Республика Конго (Republic of the Congo)": "#e7efd9",
 "Ливан (Lebanon)": "#e8f0df"
 };
 
