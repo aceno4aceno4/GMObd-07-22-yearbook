@@ -577,7 +577,7 @@ pagePeople.forEach((person, pageIndex) => {
         </p>
 
         <button class="more-button" data-index="${realIndex}">
-            Read the letter →
+            Read More →
         </button>
     `;
 
@@ -750,7 +750,7 @@ function showDetail(index) {
                         .join("")}
                 </div>
             `
-            : "<p class=\"empty-note\">No shared photos yet.</p>";
+            : "<p class=\"empty-note\">No moments shared yet.</p>";
 
     const contactHtml = `
         ${person.facebook ? `<p><strong>Facebook:</strong> ${person.facebook}</p>` : ""}
@@ -791,8 +791,10 @@ function showDetail(index) {
 
         <section class="detail-section">
 
-            <h3>Message</h3>
-
+<h3>
+    Message<br>
+    <small>Послание</small>
+</h3>
             <p class="detail-quote">
                 “${person.shortMessage || "..."}”
             </p>
@@ -803,7 +805,10 @@ function showDetail(index) {
 
         <section class="detail-section">
 
-            <h3>Reflections</h3>
+           <h3>
+    Reflections<br>
+    <small>Размышления</small>
+</h3>
 
             <p>${person.publicMessage || ""}</p>
 
@@ -811,7 +816,10 @@ function showDetail(index) {
 
         <section class="detail-section">
 
-            <h3>Contacts</h3>
+            <h3>
+    Contacts<br>
+    <small>Контакты</small>
+</h3>
 
             ${
                 contactHtml.trim()
@@ -823,7 +831,10 @@ function showDetail(index) {
 
         <section class="detail-section rudn-photos-section">
 
-    <h3>RUDN Photos</h3>
+    <h3>
+    Moments at RUDN<br>
+    <small>Моменты в РУДН</small>
+</h3>
 
     ${galleryHtml}
 

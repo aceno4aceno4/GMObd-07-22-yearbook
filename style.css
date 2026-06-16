@@ -1509,3 +1509,15 @@ scroll-snap-align: start;
         font-size: 9px !important;
     }
 }
+.detail-section h3 small {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 0.7em;
+    font-weight: 500;
+
+    opacity: 0.72;
+
+    letter-spacing: 0.02em;
+}
