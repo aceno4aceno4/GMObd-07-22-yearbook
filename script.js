@@ -1,5 +1,4 @@
 const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSAymj-OCHVdu412TjOKku_jjXTImEXwyd3TPRCPYvRhaMf6Fry0M7Bde_dUV6ng10XktB3_yKXhtKF/pub?output=tsv";
-
 const flags = {
     "Вьетнам (Vietnam)": "https://flagcdn.com/w80/vn.png",
     "Россия (Russia)": "https://flagcdn.com/w80/ru.png",
@@ -16,7 +15,8 @@ const flags = {
     "Туркменистан (Turkmenistan)": "https://flagcdn.com/w80/tm.png",
     "Чад (Chad)": "https://flagcdn.com/w80/td.png",
     "Турция (Turkey)": "https://flagcdn.com/w80/tr.png",
-    "Республика Конго (Republic of the Congo)": "https://flagcdn.com/w80/cg.png"
+    "Республика Конго (Republic of the Congo)": "https://flagcdn.com/w80/cg.png",
+    "Ливан (Lebanon)": "https://flagcdn.com/w80/lb.png"
 };
 
 const countryIcons = {
@@ -56,6 +56,7 @@ const countryColors = {
     "Чад (Chad)": "#dfe5f4",
     "Турция (Turkey)": "#f2d8d8",
     "Республика Конго (Republic of the Congo)": "#e7efd9"
+"Ливан (Lebanon)": "#e8f0df",
 };
 
 function makeStampRing(countryName) {
@@ -142,6 +143,7 @@ const countryStamps = {
     "Чад (Chad)": { center: "CHAD", ring: makeStampRing("CHAD"), centerSize: 18, ringSize: 7.2 },
     "Турция (Turkey)": { center: "TURKEY", ring: makeStampRing("TURKEY"), centerSize: 16, ringSize: 7.2 },
     "Республика Конго (Republic of the Congo)": { center: "CONGO", ring: makeStampRing("REPUBLIC OF THE CONGO"), centerSize: 14, ringSize: 6.2 },
+"Ливан (Lebanon)": { center: "LEBANON", ring: makeStampRing("LEBANON"), centerSize: 13, ringSize: 6.8 },
     "Mục khác": { center: "RUDN", ring: makeStampRing("FROM RUDN TO THE WORLD"), centerSize: 20, ringSize: 5.8 }
 };
 
@@ -163,6 +165,7 @@ const countryMaps = {
     "Чад (Chad)": { src: "map/chad.svg" },
     "Турция (Turkey)": { src: "map/turkey.svg" },
     "Республика Конго (Republic of the Congo)": { src: "map/congo.svg" }
+"Ливан (Lebanon)": { src: "map/lebanon.svg" },
 };
 let people = [];
 
@@ -226,6 +229,8 @@ const countryAliases = {
     "Chad": "Чад (Chad)",
     "Thổ Nhĩ Kỳ": "Турция (Turkey)",
     "Cộng hoà Congo": "Республика Конго (Republic of the Congo)",
+"Lebanon": "Ливан (Lebanon)",
+"Li-băng": "Ливан (Lebanon)",
     "Mục khác": "Mục khác"
 };
 function normalizePerson(row) {
