@@ -1186,16 +1186,15 @@ overflow: visible;
     font-size: 13px;
 }
 .wish-meta strong {
-    color: var(--ink-soft);
+    color: rgba(107, 99, 87, 0.62);
 
     font-family: "Be Vietnam Pro", sans-serif;
 
     font-size: 12px;
     font-weight: 600;
 
-    opacity: 0.8;
-
     line-height: 1.4;
+    letter-spacing: 0.01em;
 }
 .wish-meta span {
     color: var(--ink-soft);
