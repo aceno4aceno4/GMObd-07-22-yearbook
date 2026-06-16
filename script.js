@@ -164,7 +164,7 @@ const countryMaps = {
     "Туркменистан (Turkmenistan)": { src: "map/turkmenistan.svg" },
     "Чад (Chad)": { src: "map/chad.svg" },
     "Турция (Turkey)": { src: "map/turkey.svg" },
-    "Республика Конго (Republic of the Congo)": { src: "map/congo.svg" }
+    "Республика Конго (Republic of the Congo)": { src: "map/congo.svg" },
 "Ливан (Lebanon)": { src: "map/lebanon.svg" }
 };
 let people = [];
