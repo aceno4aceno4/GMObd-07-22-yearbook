@@ -791,10 +791,7 @@ function showDetail(index) {
 
         <section class="detail-section">
 
-<h3>
-    Message<br>
-    <small>Послание</small>
-</h3>
+<h3>Послание / Message</h3>
             <p class="detail-quote">
                 “${person.shortMessage || "..."}”
             </p>
@@ -805,10 +802,7 @@ function showDetail(index) {
 
         <section class="detail-section">
 
-           <h3>
-    Reflections<br>
-    <small>Размышления</small>
-</h3>
+           <h3>Размышления / Reflections</h3>
 
             <p>${person.publicMessage || ""}</p>
 
@@ -816,10 +810,7 @@ function showDetail(index) {
 
         <section class="detail-section">
 
-            <h3>
-    Contacts<br>
-    <small>Контакты</small>
-</h3>
+            <h3>Контакты / Contacts</h3>
 
             ${
                 contactHtml.trim()
@@ -831,10 +822,7 @@ function showDetail(index) {
 
         <section class="detail-section rudn-photos-section">
 
-    <h3>
-    Moments at RUDN<br>
-    <small>Моменты в РУДН</small>
-</h3>
+    <h3>Моменты в РУДН / Moments at RUDN</h3>
 
     ${galleryHtml}
 
