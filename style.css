@@ -498,7 +498,7 @@ padding: 6px;
 
 .detail-section h3 {
     margin: 0 0 10px;
-    font-family: "Playfair Display", serif;
+    font-family: 'Lora', serif;
     font-size: 20px;
     color: var(--rust);
     display: inline-block;
