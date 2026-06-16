@@ -1187,18 +1187,23 @@ overflow: visible;
 }
 .wish-meta strong {
     color: var(--ink-soft);
-    font-family: "Be Vietnam Pro", sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    line-height: 1.35;
-}
 
+    font-family: "Be Vietnam Pro", sans-serif;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    opacity: 0.8;
+
+    line-height: 1.4;
+}
 .wish-meta span {
     color: var(--ink-soft);
-    font-size: 13px;
-    font-weight: 600;
-}
+    font-size: 12px;
+    font-weight: 500;
 
+    opacity: 0.75;
+}
 .wish-bubble p {
     margin: 0;
     color: var(--ink);
@@ -1228,7 +1233,7 @@ overflow: visible;
     }
 
     .wish-meta strong {
-        font-size: 18px;
+        font-size: 12px;
     }
 
     .wish-bubble p {
