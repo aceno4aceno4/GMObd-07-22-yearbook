@@ -1,22 +1,21 @@
 const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSAymj-OCHVdu412TjOKku_jjXTImEXwyd3TPRCPYvRhaMf6Fry0M7Bde_dUV6ng10XktB3_yKXhtKF/pub?output=tsv";
-const flags = {
-    "Вьетнам (Vietnam)": "https://flagcdn.com/w80/vn.png",
-    "Россия (Russia)": "https://flagcdn.com/w80/ru.png",
-    "Монголия (Mongolia)": "https://flagcdn.com/w80/mn.png",
-    "Мексика (Mexico)": "https://flagcdn.com/w80/mx.png",
-    "Узбекистан (Uzbekistan)": "https://flagcdn.com/w80/uz.png",
-    "Мадагаскар (Madagascar)": "https://flagcdn.com/w80/mg.png",
-    "Казахстан (Kazakhstan)": "https://flagcdn.com/w80/kz.png",
-    "Марокко (Morocco)": "https://flagcdn.com/w80/ma.png",
-    "Экваториальная Гвинея (Equatorial Guinea)": "https://flagcdn.com/w80/gq.png",
-    "Конго (Congo)": "https://flagcdn.com/w80/cg.png",
-    "Босния и Герцеговина (Bosnia and Herzegovina)": "https://flagcdn.com/ba.svg",
-    "Испания (Spain)": "https://flagcdn.com/w80/es.png",
-    "Туркменистан (Turkmenistan)": "https://flagcdn.com/w80/tm.png",
-    "Чад (Chad)": "https://flagcdn.com/w80/td.png",
-    "Турция (Turkey)": "https://flagcdn.com/w80/tr.png",
-    "Республика Конго (Republic of the Congo)": "https://flagcdn.com/w80/cg.png",
-    "Ливан (Lebanon)": "https://flagcdn.com/w80/lb.png"
+"Вьетнам (Vietnam)": "flag/vietnam.svg",
+"Россия (Russia)": "flag/russia.svg",
+"Монголия (Mongolia)": "flag/mongolia.svg",
+"Мексика (Mexico)": "flag/mexico.svg",
+"Узбекистан (Uzbekistan)": "flag/uzbekistan.svg",
+"Мадагаскар (Madagascar)": "flag/madagascar.svg",
+"Казахстан (Kazakhstan)": "flag/kazakhstan.svg",
+"Марокко (Morocco)": "flag/morocco.svg",
+"Экваториальная Гвинея (Equatorial Guinea)": "flag/equatorial_guinea.svg",
+"Конго (Congo)": "flag/congo.svg",
+"Босния и Герцеговина (Bosnia and Herzegovina)": "flag/bosnia.svg",
+"Испания (Spain)": "flag/spain.svg",
+"Туркменистан (Turkmenistan)": "flag/turkmenistan.svg",
+"Чад (Chad)": "flag/chad.svg",
+"Турция (Turkey)": "flag/turkey.svg",
+"Республика Конго (Republic of the Congo)": "flag/congo.svg",
+"Ливан (Lebanon)": "flag/lebanon.svg"
 };
 
 const countryIcons = {
@@ -155,7 +154,7 @@ const countryMaps = {
     "Мексика (Mexico)": { src: "map/mexico.svg" },
     "Узбекистан (Uzbekistan)": { src: "map/uzbekistan.svg" },
     "Марокко (Morocco)": { src: "map/morocco.svg" },
-    "Экваториальная Гвинея (Equatorial Guinea)": { src: "map/guinea.svg" },
+    "Экваториальная Гвинея (Equatorial Guinea)": { src: "map/equatorial_guinea.svg" },
     "Конго (Congo)": { src: "map/congo.svg" },
     "Казахстан (Kazakhstan)": { src: "map/kazakhstan.svg" },
     "Босния и Герцеговина (Bosnia and Herzegovina)": { src: "map/bosnia.svg" },
