@@ -1,21 +1,23 @@
 const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSAymj-OCHVdu412TjOKku_jjXTImEXwyd3TPRCPYvRhaMf6Fry0M7Bde_dUV6ng10XktB3_yKXhtKF/pub?output=tsv";
-"Вьетнам (Vietnam)": "flag/vietnam.svg",
-"Россия (Russia)": "flag/russia.svg",
-"Монголия (Mongolia)": "flag/mongolia.svg",
-"Мексика (Mexico)": "flag/mexico.svg",
-"Узбекистан (Uzbekistan)": "flag/uzbekistan.svg",
-"Мадагаскар (Madagascar)": "flag/madagascar.svg",
-"Казахстан (Kazakhstan)": "flag/kazakhstan.svg",
-"Марокко (Morocco)": "flag/morocco.svg",
-"Экваториальная Гвинея (Equatorial Guinea)": "flag/equatorial_guinea.svg",
-"Конго (Congo)": "flag/congo.svg",
-"Босния и Герцеговина (Bosnia and Herzegovina)": "flag/bosnia.svg",
-"Испания (Spain)": "flag/spain.svg",
-"Туркменистан (Turkmenistan)": "flag/turkmenistan.svg",
-"Чад (Chad)": "flag/chad.svg",
-"Турция (Turkey)": "flag/turkey.svg",
-"Республика Конго (Republic of the Congo)": "flag/congo.svg",
-"Ливан (Lebanon)": "flag/lebanon.svg"
+
+const flags = {
+    "Вьетнам (Vietnam)": "flag/vietnam.svg",
+    "Россия (Russia)": "flag/russia.svg",
+    "Монголия (Mongolia)": "flag/mongolia.svg",
+    "Мексика (Mexico)": "flag/mexico.svg",
+    "Узбекистан (Uzbekistan)": "flag/uzbekistan.svg",
+    "Мадагаскар (Madagascar)": "flag/madagascar.svg",
+    "Казахстан (Kazakhstan)": "flag/kazakhstan.svg",
+    "Марокко (Morocco)": "flag/morocco.svg",
+    "Экваториальная Гвинея (Equatorial Guinea)": "flag/equatorial_guinea.svg",
+    "Конго (Congo)": "flag/congo.svg",
+    "Босния и Герцеговина (Bosnia and Herzegovina)": "flag/bosnia.svg",
+    "Испания (Spain)": "flag/spain.svg",
+    "Туркменистан (Turkmenistan)": "flag/turkmenistan.svg",
+    "Чад (Chad)": "flag/chad.svg",
+    "Турция (Turkey)": "flag/turkey.svg",
+    "Республика Конго (Republic of the Congo)": "flag/congo.svg",
+    "Ливан (Lebanon)": "flag/lebanon.svg"
 };
 
 const countryIcons = {
